@@ -12,18 +12,24 @@ import CoreData
       struct ContentView: View {
           var body: some View {
               NavigationView {
+                ZStack {
+                  LinearGradient(gradient: Gradient(stops: [
+                      .init(color: Color(#colorLiteral(red: 0.4607751966, green: 0.4590293765, blue: 1, alpha: 1)), location: 0),
+                      .init(color: Color(#colorLiteral(red: 1, green: 0.3152733147, blue: 0.381154716, alpha: 1)), location: 1)
+                  ]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0, y: 1))
                   Text("Hello, world!")
-                      .navigationTitle("My Title")
-                      .navigationBarTitleDisplayMode(.inline)
-                      .navigationBarBackButtonHidden(true)
-                      .toolbar {
-                          ToolbarItem(placement: .navigationBarLeading) {
-                              Button(action: {}) {
-                                  Image(systemName: "arrow.left")
-                                  Text("Back")
-                              }
-                          }
+                        .navigationTitle("My Title")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .navigationBarBackButtonHidden(true)
+                        .toolbar {
+                            ToolbarItem(placement: .navigationBarLeading) {
+                                Button(action: {}) {
+                                    Image(systemName: "arrow.left")
+                                    Text("Back")
+                                }
+                            }
                       }
+                }
               }
           }
       }

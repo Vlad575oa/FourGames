@@ -23,7 +23,6 @@ struct MathView: View {
 
   var body: some View {
     ZStack {
-      Color.white
       LinearGradient(gradient: Gradient(colors: [.green, .yellow, .blue]),startPoint: .top, endPoint: .bottom ).ignoresSafeArea()
 
       VStack {

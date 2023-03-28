@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MathView: View {
+  @State private var isAnimating = true
     @State private var correctAnswer = 0
     @State private var choiceArray = [0, 1, 2, 3]
     @State private var firstNumber = 0
@@ -67,7 +68,7 @@ struct MathView: View {
                     .font(.system(size: 50, weight: .bold))
                     .bold()
                     .padding()
-                    .padding(.horizontal, 60)
+
                     .background(LinearGradient(colors: [.purple, .blue], startPoint: .leading, endPoint: .trailing)).cornerRadius(40)
                     .padding()
                 
@@ -100,21 +101,37 @@ struct MathView: View {
                     .bold()
                 
                 
-                Button("Сбросить счет") {
-                    score = 0
+              Button(action: {
+                withAnimation(.easeOut(duration: 2)) { // Use withAnimation instead
+                  score = 0
+                  isAnimating = true
                 }
-                .foregroundColor(.black)
-                .font(.system(size: 20, weight: .bold))
-                .padding()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                  isAnimating = false
+                  score = 0
+                }
+              }) {
+                Text("Сбросить счет")
+                  .font(.headline)
+                  .foregroundColor(.white)
+                  .padding()
+                  .background(isAnimating ? Color.green : Color.blue)
+                  .cornerRadius(15)
+                  .scaleEffect(isAnimating ? 1.2 : 1.0)
+                  .animation(.easeInOut(duration: 0.5))
+
+            }
                 
                 Text("Уровень сложности")
-                .font(.system(size: 20, weight: .bold))
-                
-                Picker(selection: $difficulty, label:
-                        Text("level")) {
-                    ForEach(0..<difficultyArray.count) { Text("\(difficultyArray[$0])")
-                    }
-                }.pickerStyle(SegmentedPickerStyle())
+              withAnimation(.easeInOut(duration: 0.8)) {
+                  Picker(selection: $difficulty, label:
+                          Text("Level")) {
+                      ForEach(0..<difficultyArray.count) {
+                          Text("\(difficultyArray[$0])")
+                      }
+                  }
+                  .pickerStyle(SegmentedPickerStyle())
+              }
             }
         }
     }

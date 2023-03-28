@@ -56,8 +56,8 @@
 		CE554C1A29D3286E004D6222 /* Math */ = {
 			isa = PBXGroup;
 			children = (
-				CE554BE829D32588004D6222 /* AnswerButton.swift */,
 				CE554BE629D32583004D6222 /* MathView.swift */,
+				CE554BE829D32588004D6222 /* AnswerButton.swift */,
 			);
 			path = Math;
 			sourceTree = "<group>";

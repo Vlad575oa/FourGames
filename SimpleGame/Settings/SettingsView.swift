@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @AppStorage("name") private var name = ""
+    @AppStorage("email") private var email = ""
+    @AppStorage("mobile") private var mobile = ""
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            TextField("Name", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            TextField("Email", text: $email)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            TextField("Mobile", text: $mobile)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+
+            Spacer()
+        }
+        .navigationBarTitle(Text("Settings"))
     }
 }
 
@@ -18,3 +37,4 @@ struct SettingsView_Previews: PreviewProvider {
         SettingsView()
     }
 }
+

@@ -32,7 +32,7 @@ struct WelcomeView: View {
                       .foregroundColor(.white)
                       .cornerRadius(30)
                   }
-                  NavigationLink(destination:  AlphabetEn()) {
+                  NavigationLink(destination: AlphabetEn()) {
                     Text("Alphabet")
                       .font(.system(size: 30))
                       .padding(.horizontal, 20)

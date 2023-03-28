@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE554BDA29D324DD004D6222 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BD929D324DD004D6222 /* WelcomeView.swift */; };
 		CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDB29D32502004D6222 /* AlphabetRus.swift */; };
 		CE554BDF29D32539004D6222 /* ModelRu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDE29D32539004D6222 /* ModelRu.swift */; };
-		CE554BE129D32548004D6222 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE029D32548004D6222 /* SettingsView.swift */; };
 		CE554BE329D32563004D6222 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE229D32563004D6222 /* Alphabet.swift */; };
 		CE554BE529D32573004D6222 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE429D32573004D6222 /* FlagView.swift */; };
 		CE554BE729D32583004D6222 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE629D32583004D6222 /* MathView.swift */; };
 		CE554BE929D32588004D6222 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE829D32588004D6222 /* AnswerButton.swift */; };
+		CE554C2229D32FCB004D6222 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554C2129D32FCB004D6222 /* WelcomeView.swift */; };
+		CE554C2429D32FD1004D6222 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554C2329D32FD1004D6222 /* SettingsView.swift */; };
 		CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */; };
 		CE70A38629D3213D00DEB45F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38529D3213D00DEB45F /* Persistence.swift */; };
 		CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38729D3213D00DEB45F /* SimpleGame.xcdatamodeld */; };
@@ -24,16 +24,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE554BD929D324DD004D6222 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = ../../../../.Trash/WelcomeView.swift; sourceTree = "<group>"; };
 		CE554BDB29D32502004D6222 /* AlphabetRus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetRus.swift; sourceTree = "<group>"; };
 		CE554BDE29D32539004D6222 /* ModelRu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelRu.swift; sourceTree = "<group>"; };
-		CE554BE029D32548004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = ../../../../.Trash/MainView/SettingsView.swift; sourceTree = "<group>"; };
 		CE554BE229D32563004D6222 /* Alphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
 		CE554BE429D32573004D6222 /* FlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		CE554BE629D32583004D6222 /* MathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		CE554BE829D32588004D6222 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
-		CE554C1F29D32958004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CE554C2029D32958004D6222 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CE554C2129D32FCB004D6222 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = ../../../.Trash/Games/Games/WelcomeView.swift; sourceTree = "<group>"; };
+		CE554C2329D32FD1004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsView.swift; path = ../../../.Trash/Games/Games/SettingsView.swift; sourceTree = "<group>"; };
+		CE554C2529D3305C004D6222 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		CE554C2629D3305E004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CE70A38029D3213D00DEB45F /* SimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameApp.swift; sourceTree = "<group>"; };
 		CE70A38529D3213D00DEB45F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 		CE554C1E29D32958004D6222 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				CE554C2029D32958004D6222 /* WelcomeView.swift */,
-				CE554C1F29D32958004D6222 /* SettingsView.swift */,
+				CE554C2629D3305E004D6222 /* SettingsView.swift */,
+				CE554C2529D3305C004D6222 /* WelcomeView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -118,9 +118,9 @@
 			isa = PBXGroup;
 			children = (
 				CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */,
+				CE554C2329D32FD1004D6222 /* SettingsView.swift */,
+				CE554C2129D32FCB004D6222 /* WelcomeView.swift */,
 				CE554C1E29D32958004D6222 /* Main */,
-				CE554BD929D324DD004D6222 /* WelcomeView.swift */,
-				CE554BE029D32548004D6222 /* SettingsView.swift */,
 				CE554C1A29D3286E004D6222 /* Math */,
 				CE554C1D29D32949004D6222 /* Flag */,
 				CE554C1B29D3287F004D6222 /* AlphabetRu */,
@@ -213,16 +213,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE554BDA29D324DD004D6222 /* WelcomeView.swift in Sources */,
-				CE554BE129D32548004D6222 /* SettingsView.swift in Sources */,
 				CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */,
 				CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */,
 				CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */,
 				CE554BE929D32588004D6222 /* AnswerButton.swift in Sources */,
 				CE554BDF29D32539004D6222 /* ModelRu.swift in Sources */,
 				CE554BE729D32583004D6222 /* MathView.swift in Sources */,
+				CE554C2229D32FCB004D6222 /* WelcomeView.swift in Sources */,
 				CE554BE529D32573004D6222 /* FlagView.swift in Sources */,
 				CE554BE329D32563004D6222 /* Alphabet.swift in Sources */,
+				CE554C2429D32FD1004D6222 /* SettingsView.swift in Sources */,
 				CE70A38B29D3213D00DEB45F /* ContentView.swift in Sources */,
 				CE70A38629D3213D00DEB45F /* Persistence.swift in Sources */,
 			);

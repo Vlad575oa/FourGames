@@ -42,7 +42,7 @@ struct LetterView: View {
     }
 
 
-struct FirstView: View {
+struct AlphabetEn: View {
     @State var showLetters = true
     @State var letterVisibility = Array(repeating: true, count: 26)
     @State var randomNumber = 0
@@ -141,7 +141,7 @@ struct FirstView: View {
 
 struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
-        FirstView()
+        AlphabetEn()
     }
 }
 

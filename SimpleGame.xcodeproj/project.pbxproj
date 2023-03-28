@@ -32,6 +32,8 @@
 		CE554BE429D32573004D6222 /* FlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		CE554BE629D32583004D6222 /* MathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		CE554BE829D32588004D6222 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
+		CE554C1F29D32958004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE554C2029D32958004D6222 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		CE70A38029D3213D00DEB45F /* SimpleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameApp.swift; sourceTree = "<group>"; };
 		CE70A38529D3213D00DEB45F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -53,11 +55,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE554BDD29D32520004D6222 /* AlphabetRu */ = {
+		CE554C1A29D3286E004D6222 /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				CE554BE829D32588004D6222 /* AnswerButton.swift */,
+				CE554BE629D32583004D6222 /* MathView.swift */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		CE554C1B29D3287F004D6222 /* AlphabetRu */ = {
+			isa = PBXGroup;
+			children = (
+				CE554BDB29D32502004D6222 /* AlphabetRus.swift */,
+				CE554BDE29D32539004D6222 /* ModelRu.swift */,
 			);
 			path = AlphabetRu;
+			sourceTree = "<group>";
+		};
+		CE554C1C29D32930004D6222 /* AlphabetEn */ = {
+			isa = PBXGroup;
+			children = (
+				CE554BE229D32563004D6222 /* Alphabet.swift */,
+			);
+			path = AlphabetEn;
+			sourceTree = "<group>";
+		};
+		CE554C1D29D32949004D6222 /* Flag */ = {
+			isa = PBXGroup;
+			children = (
+				CE554BE429D32573004D6222 /* FlagView.swift */,
+			);
+			path = Flag;
+			sourceTree = "<group>";
+		};
+		CE554C1E29D32958004D6222 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE554C2029D32958004D6222 /* WelcomeView.swift */,
+				CE554C1F29D32958004D6222 /* SettingsView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		CE70A37729D3213D00DEB45F = {
@@ -80,15 +118,13 @@
 			isa = PBXGroup;
 			children = (
 				CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */,
+				CE554C1E29D32958004D6222 /* Main */,
 				CE554BD929D324DD004D6222 /* WelcomeView.swift */,
 				CE554BE029D32548004D6222 /* SettingsView.swift */,
-				CE554BE829D32588004D6222 /* AnswerButton.swift */,
-				CE554BE629D32583004D6222 /* MathView.swift */,
-				CE554BE429D32573004D6222 /* FlagView.swift */,
-				CE554BDE29D32539004D6222 /* ModelRu.swift */,
-				CE554BE229D32563004D6222 /* Alphabet.swift */,
-				CE554BDB29D32502004D6222 /* AlphabetRus.swift */,
-				CE554BDD29D32520004D6222 /* AlphabetRu */,
+				CE554C1A29D3286E004D6222 /* Math */,
+				CE554C1D29D32949004D6222 /* Flag */,
+				CE554C1B29D3287F004D6222 /* AlphabetRu */,
+				CE554C1C29D32930004D6222 /* AlphabetEn */,
 				CE70A38529D3213D00DEB45F /* Persistence.swift */,
 				CE70A38A29D3213D00DEB45F /* ContentView.swift */,
 				CE70A38C29D3213E00DEB45F /* Assets.xcassets */,

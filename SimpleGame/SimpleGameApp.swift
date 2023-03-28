@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//
 @main
 struct SimpleGameApp: App {
     let persistenceController = PersistenceController.shared

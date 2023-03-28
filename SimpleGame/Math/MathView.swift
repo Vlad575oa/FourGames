@@ -9,60 +9,108 @@ import SwiftUI
 
 struct MathView: View {
   @State private var isAnimating = true
-    @State private var correctAnswer = 0
-    @State private var choiceArray = [0, 1, 2, 3]
-    @State private var firstNumber = 0
-    @State private var secondNumber = 0
+  @State private var correctAnswer = 0
+  @State private var opacity = 0.0
+  @State private var degress = 0.0
+  @State private var choiceArray = [0, 1, 2, 3]
+  @State private var firstNumber = 0
+  @State private var secondNumber = 0
   
-    @AppStorage("score") private var score = 0
-    @State private var difficulty = 0
+  @AppStorage("score") private var score = 0
+  @State private var difficulty = 0
   
-    var difficultyArray = [30, 50, 100, 500, 1000]
-    
-    var body: some View {
-        ZStack {
-            Color.white
-            LinearGradient(gradient: Gradient(colors: [.green, .yellow, .blue]),startPoint: .top, endPoint: .bottom ).ignoresSafeArea()
-            
-            VStack {
+  var difficultyArray = [30, 50, 100, 500, 1000]
+
+  var body: some View {
+    ZStack {
+      Color.white
+      LinearGradient(gradient: Gradient(colors: [.green, .yellow, .blue]),startPoint: .top, endPoint: .bottom ).ignoresSafeArea()
+
+      VStack {
+        switch score  {
+        case 2:
+
+          Text("Ты молодец!")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+            .fontWeight(.semibold)
+            .rotationEffect(.degrees(degress))
+            .opacity(opacity)
+            .animation(.easeInOut(duration: 2.0))
+            .onAppear {
+              withAnimation {
+                self.opacity = 1.0
+                self.degress = 360
+              }
+            }
+        case 20:
+          Text("Превосходно!")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+            .fontWeight(.semibold)
+            .rotationEffect(.degrees(degress))
+            .opacity(opacity)
+            .animation(.easeInOut(duration: 2.0))
+            .onAppear {
+              withAnimation {
+                self.opacity = 1.0
+                self.degress = 360
+              }
+            }
+
+        case 30:
+          Text("Да ты гений!")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+            .fontWeight(.semibold)
+            .rotationEffect(.degrees(degress))
+            .opacity(opacity)
+            .animation(.easeInOut(duration: 2.0))
+            .onAppear {
+              withAnimation {
+                self.opacity = 1.0
+                self.degress = 360
+              }
+            }
+        case 40:
+          Text("Класс!")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+            .fontWeight(.semibold)
+            .rotationEffect(.degrees(degress))
+            .opacity(opacity)
+            .animation(.easeInOut(duration: 2.0))
+            .onAppear {
+              withAnimation {
+                self.opacity = 1.0
+                self.degress = 360
+              }
+            }
+
+        case 50:
+          Text("Ты супер!")
+            .font(.largeTitle)
+            .foregroundColor(.red)
+            .fontWeight(.semibold)
+            .rotationEffect(.degrees(degress))
+            .opacity(opacity)
+            .animation(.easeInOut(duration: 2.0))
+            .onAppear {
+              withAnimation {
+                self.opacity = 1.0
+                self.degress = 360
+              }
+            }
+
+        default:
+          Text("")
+        }
+
                 Text("Сколько будет ")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 35, weight: .semibold))
             
-                    switch score  {
-                    case 3:
-//                        withAnimation(.spring()) {
-                            Text("Ты молодец!")
-                                .font(.system(size: 30, weight: .bold))
-                                .foregroundColor(.red)
-                        
-                    case 5:
-                        Text("Умница!")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.blue)
-                    case 10:
-                        Text("Да ты гений!")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.green)
-                    case 15:
-                        Text("Класс!")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.white)
-                    case 20:
-                        Text("Ты супер умная!")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.orange)
-                    case 30:
-                        Text("Ты лучшая!")
-                            .font(.system(size: 30, weight: .bold))
-                            .foregroundColor(.green)
-                            .padding()
-                        Image(systemName: "sun.max").font(.system(size: 30, weight: .bold))
-                        
-                    default:
-                        Text("")
-                    }
-                
+
                 
                 Text("\(firstNumber) + \(secondNumber)")
                     .font(.system(size: 50, weight: .bold))
@@ -78,6 +126,9 @@ struct MathView: View {
                         Button {
                             answerIsCorrect(answer: choiceArray[index])
                             generateAnswers()
+                          opacity = 0.0
+                          degress = 0
+                        
                         } label: {
                             AnswerButton(number: choiceArray[index])
                         }
@@ -89,6 +140,7 @@ struct MathView: View {
                         Button {
                             answerIsCorrect(answer: choiceArray[index])
                             generateAnswers()
+                          opacity = 0.0
                         } label: {
                             AnswerButton(number: choiceArray[index])
                         }
@@ -102,7 +154,7 @@ struct MathView: View {
                 
                 
               Button(action: {
-                withAnimation(.easeOut(duration: 2)) { // Use withAnimation instead
+                withAnimation(.easeOut(duration: 2.0)) {
                   score = 0
                   isAnimating = true
                 }
@@ -123,7 +175,7 @@ struct MathView: View {
             }
                 
                 Text("Уровень сложности")
-              withAnimation(.easeInOut(duration: 0.8)) {
+              withAnimation(.easeInOut(duration: 0.5)) {
                   Picker(selection: $difficulty, label:
                           Text("Level")) {
                       ForEach(0..<difficultyArray.count) {
@@ -169,3 +221,25 @@ struct MathView_Previews: PreviewProvider {
         MathView()
     }
 }
+
+//struct TextModifier: ViewModifier {
+//
+//
+//  var opacity: Double
+//  var degrees: Double
+//  mutating func body(content: Content) -> some View {
+//    content
+//      .font(.largeTitle)
+//      .foregroundColor(.red)
+//      .rotationEffect(.degrees(self.degrees))
+//      .opacity(self.opacity)
+//      .animation(.easeInOut(duration: 2.0))
+//      .onAppear {
+//        withAnimation {
+//          self.opacity = 1.0
+//          self.degrees = 360
+//        }
+//      }
+//  }
+//}
+

@@ -21,6 +21,7 @@
 		CE70A39129D3213E00DEB45F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */; };
 		CEF3E4B329D3316200976396 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554C2629D3305E004D6222 /* SettingsView.swift */; };
 		CEF3E4B729D3320C00976396 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3E4B629D3320C00976396 /* WelcomeView.swift */; };
+		CEF3E4B929D35CCD00976396 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3E4B829D35CCD00976396 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleGame.entitlements; sourceTree = "<group>"; };
 		CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEF3E4B629D3320C00976396 /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeView.swift; path = ../../../../.Trash/Games/Games/WelcomeView.swift; sourceTree = "<group>"; };
+		CEF3E4B829D35CCD00976396 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				CE554C1C29D32930004D6222 /* AlphabetEn */,
 				CE70A38529D3213D00DEB45F /* Persistence.swift */,
 				CE70A38A29D3213D00DEB45F /* ContentView.swift */,
+				CEF3E4B829D35CCD00976396 /* SwiftUIView.swift */,
 				CE70A38C29D3213E00DEB45F /* Assets.xcassets */,
 				CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */,
 				CE70A38729D3213D00DEB45F /* SimpleGame.xcdatamodeld */,
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF3E4B929D35CCD00976396 /* SwiftUIView.swift in Sources */,
 				CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */,
 				CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */,
 				CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */,

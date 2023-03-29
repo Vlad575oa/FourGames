@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FlagView: View {
 
-  @State private var countries = ["Argentina", "Bangladesh", "Brazil", "China", "Colombian", "Egypt", "Europe", "France", "Germany", "Greece", "India", "Indonesia", "Iran", "Italy", "Mexico", "Philippines", "Russia", "Sweden", "Thailand"].shuffled()
+  @State private var countries = ["Флаг Австралии", "Флаг Австрии", "Флаг Азербайджана", "Флаг Албании", "Флаг Алжира", "Флаг Анголы", "Флаг Аргентины", "Флаг Андорры", "Флаг Армении", "Флаг Афганистана", "Флаг Багамских Островов", "Флаг Бангладеш", "Флаг Бахрейна", "Флаг Белиза", "Флаг Беларусии", "Флаг Бельгии", "Флаг Бенина", "Флаг Болгарии", "Флаг Боливии", "Флаг Боснии и Герцеговины","Флаг Ботсваны","Флаг Бразилии","Флаг Брунея","Флаг Буркина-Фасо","Флаг Бурунди","Флаг Бутана","Флаг Вануату","Флаг Великобритании","Флаг Венгрии","Флаг Венесуэлы","Флаг Восточного Тимора","Флаг Вьетнама","Флаг Габона","Флаг Гаити","Флаг Гайаны","Флаг Гамбии","Флаг Ганы","Флаг Гватемалы","Флаг Гвинеи","Флаг Гвинеи-Бисау","Флаг Германии","Флаг Гондураса","Палестинский флаг","Флаг Гренады","Флаг Греции","Флаг Грузии","Флаг Дании","Флаг Демократической Республики Конго","Флаг Доминиканской Республики","Флаг Египта","Флаг Замбии","Флаг Зимбабве","Флаг Индии","Флаг Индонезии","Флаг Иордании","Флаг Ирака"].shuffled()
 
   @AppStorage("score") private var score = 0
   @State private var isAnimating = false
@@ -20,12 +20,15 @@ struct FlagView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.blue, .black.opacity(0.9)]), startPoint: .topTrailing, endPoint: .bottomLeading)
-                .edgesIgnoringSafeArea(.all)
+          LinearGradient(gradient: Gradient(stops: [
+              .init(color: Color(#colorLiteral(red: 0.4607751966, green: 0.4590293765, blue: 1, alpha: 1)), location: 0),
+              .init(color: Color(#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)), location: 1)
+          ]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0, y: 1))
+          .ignoresSafeArea()
           VStack {
 
             VStack(spacing: 10) {
-              Text("Флаг \(countries[correctAnswer])")
+              Text(countries[correctAnswer])
                 .foregroundColor(.white)
                 .font(.largeTitle)
                 .fontWeight(.semibold)

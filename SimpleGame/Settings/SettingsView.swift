@@ -20,7 +20,7 @@ struct SettingsView: View {
         ]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0, y: 1))
         .ignoresSafeArea()
         VStack {
-              TextField("Name", text: $name)
+              TextField("Имя", text: $name)
                   .textFieldStyle(RoundedBorderTextFieldStyle())
                   .padding()
 
@@ -28,7 +28,7 @@ struct SettingsView: View {
                   .textFieldStyle(RoundedBorderTextFieldStyle())
                   .padding()
 
-              TextField("Mobile", text: $mobile)
+              TextField("Телефон", text: $mobile)
                   .textFieldStyle(RoundedBorderTextFieldStyle())
                   .padding()
 

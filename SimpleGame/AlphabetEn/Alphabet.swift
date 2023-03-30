@@ -36,13 +36,17 @@ struct LetterView: View {
             .onTapGesture {
                 withAnimation(.easeInOut(duration: 0.5)) {
                     isVisible.toggle()
+                
+                      }
+                  }
+
                 }
             }
-        }
-    }
+
 
 
 struct AlphabetEn: View {
+    
     @State var showLetters = true
     @State var letterVisibility = Array(repeating: true, count: 26)
     @State var randomNumber = 0
@@ -98,11 +102,11 @@ struct AlphabetEn: View {
                 Button("Hide letters") {
                                     letterVisibility = letterVisibility.map { _ in Bool.random() }
                                     withAnimation(.easeInOut(duration: 0.2)) {
-                                        scaleAmount = 0.9
+                                        scaleAmount = 1.0
                                     }
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                         withAnimation(.easeInOut(duration: 0.2)) {
-                                            scaleAmount = 1.0
+                                          scaleAmount = 0.8
                                         }
                                     }
                                 }

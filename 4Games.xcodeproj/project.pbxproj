@@ -43,7 +43,7 @@
 		CE554BE629D32583004D6222 /* MathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		CE554BE829D32588004D6222 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		CE554C2629D3305E004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		CE70A38029D3213D00DEB45F /* SimpleGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE70A38029D3213D00DEB45F /* 4Games.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 4Games.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameApp.swift; sourceTree = "<group>"; };
 		CE70A38529D3213D00DEB45F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CE70A38829D3213D00DEB45F /* SimpleGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleGame.xcdatamodel; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		CE70A38129D3213D00DEB45F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE70A38029D3213D00DEB45F /* SimpleGames.app */,
+				CE70A38029D3213D00DEB45F /* 4Games.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,9 +163,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE70A37F29D3213D00DEB45F /* SimpleGames */ = {
+		CE70A37F29D3213D00DEB45F /* 4Games */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE70A39429D3213E00DEB45F /* Build configuration list for PBXNativeTarget "SimpleGames" */;
+			buildConfigurationList = CE70A39429D3213E00DEB45F /* Build configuration list for PBXNativeTarget "4Games" */;
 			buildPhases = (
 				CE70A37C29D3213D00DEB45F /* Sources */,
 				CE70A37D29D3213D00DEB45F /* Frameworks */,
@@ -175,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = SimpleGames;
+			name = 4Games;
 			productName = SimpleGame;
-			productReference = CE70A38029D3213D00DEB45F /* SimpleGames.app */;
+			productReference = CE70A38029D3213D00DEB45F /* 4Games.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE70A37B29D3213D00DEB45F /* Build configuration list for PBXProject "SimpleGames" */;
+			buildConfigurationList = CE70A37B29D3213D00DEB45F /* Build configuration list for PBXProject "4Games" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -208,7 +208,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE70A37F29D3213D00DEB45F /* SimpleGames */,
+				CE70A37F29D3213D00DEB45F /* 4Games */,
 			);
 		};
 /* End PBXProject section */
@@ -395,10 +395,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = none.SimpleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -433,17 +435,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = none.SimpleGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE70A37B29D3213D00DEB45F /* Build configuration list for PBXProject "SimpleGames" */ = {
+		CE70A37B29D3213D00DEB45F /* Build configuration list for PBXProject "4Games" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE70A39229D3213E00DEB45F /* Debug */,
@@ -452,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE70A39429D3213E00DEB45F /* Build configuration list for PBXNativeTarget "SimpleGames" */ = {
+		CE70A39429D3213E00DEB45F /* Build configuration list for PBXNativeTarget "4Games" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE70A39529D3213E00DEB45F /* Debug */,

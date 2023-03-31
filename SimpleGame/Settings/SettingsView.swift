@@ -12,6 +12,10 @@ struct SettingsView: View {
     @AppStorage("email") private var email = ""
     @AppStorage("mobile") private var mobile = ""
 
+  @StateObject var soundManager = SoundManager.instance
+  @State var selectedAudio = "капля"
+
+
     var body: some View {
       ZStack {
         LinearGradient(gradient: Gradient(stops: [
@@ -31,10 +35,22 @@ struct SettingsView: View {
               TextField("Телефон", text: $mobile)
                   .textFieldStyle(RoundedBorderTextFieldStyle())
                   .padding()
+          Picker("Select Audio", selection: $selectedAudio) {
+                          Text("Капля1").tag("Капля1")
+                          Text("Капля2").tag("Капля2")
+                          Text("Пузырь1").tag("Пузырь1")
+                      }
+          .pickerStyle(.wheel)
+                      .padding()
 
+                      Button("Play Audio") {
+                          soundManager.loadAudioPlayer(for: selectedAudio)
+                          soundManager.playSound()
+                      }
               Spacer()
           }
       }
+
     }
 }
 

@@ -26,164 +26,88 @@ struct MathView: View {
       LinearGradient(gradient: Gradient(colors: [.green, .yellow, .blue]),startPoint: .top, endPoint: .bottom ).ignoresSafeArea()
 
       VStack {
-        switch score  {
-        case 2:
+        Text("Сколько будет ")
+          .multilineTextAlignment(.center)
+          .font(.system(size: 35, weight: .semibold))
 
-          Text("Ты молодец!")
-            .font(.largeTitle)
-            .foregroundColor(.red)
-            .fontWeight(.semibold)
-            .rotationEffect(.degrees(degress))
-            .opacity(opacity)
-            .animation(.easeInOut(duration: 2.0))
-            .onAppear {
-              withAnimation {
-                self.opacity = 1.0
-                self.degress = 360
-              }
-            }
-        case 20:
-          Text("Превосходно!")
-            .font(.largeTitle)
-            .foregroundColor(.red)
-            .fontWeight(.semibold)
-            .rotationEffect(.degrees(degress))
-            .opacity(opacity)
-            .animation(.easeInOut(duration: 2.0))
-            .onAppear {
-              withAnimation {
-                self.opacity = 1.0
-                self.degress = 360
-              }
-            }
 
-        case 30:
-          Text("Да ты гений!")
-            .font(.largeTitle)
-            .foregroundColor(.red)
-            .fontWeight(.semibold)
-            .rotationEffect(.degrees(degress))
-            .opacity(opacity)
-            .animation(.easeInOut(duration: 2.0))
-            .onAppear {
-              withAnimation {
-                self.opacity = 1.0
-                self.degress = 360
-              }
-            }
-        case 40:
-          Text("Класс!")
-            .font(.largeTitle)
-            .foregroundColor(.red)
-            .fontWeight(.semibold)
-            .rotationEffect(.degrees(degress))
-            .opacity(opacity)
-            .animation(.easeInOut(duration: 2.0))
-            .onAppear {
-              withAnimation {
-                self.opacity = 1.0
-                self.degress = 360
-              }
-            }
 
-        case 50:
-          Text("Ты супер!")
-            .font(.largeTitle)
-            .foregroundColor(.red)
-            .fontWeight(.semibold)
-            .rotationEffect(.degrees(degress))
-            .opacity(opacity)
-            .animation(.easeInOut(duration: 2.0))
-            .onAppear {
-              withAnimation {
-                self.opacity = 1.0
-                self.degress = 360
-              }
-            }
+        Text("\(firstNumber) + \(secondNumber)")
+          .font(.system(size: 50, weight: .bold))
+          .bold()
+          .padding()
 
-        default:
-          Text("")
+          .background(LinearGradient(colors: [.purple, .blue], startPoint:.leading, endPoint: .trailing)).cornerRadius(40)
+
+
+        HStack {
+
+          ForEach(0..<2) {index in
+            Button {
+              answerIsCorrect(answer: choiceArray[index])
+              generateAnswers()
+              opacity = 0.0
+              degress = 0
+
+            } label: {
+              AnswerButton(number: choiceArray[index])
+            }
+          }
         }
 
-                Text("Сколько будет ")
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 35, weight: .semibold))
-            
-
-                
-                Text("\(firstNumber) + \(secondNumber)")
-                    .font(.system(size: 50, weight: .bold))
-                    .bold()
-                    .padding()
-
-                    .background(LinearGradient(colors: [.purple, .blue], startPoint: .leading, endPoint: .trailing)).cornerRadius(40)
-                    .padding()
-                
-                HStack {
-                    
-                    ForEach(0..<2) {index in
-                        Button {
-                            answerIsCorrect(answer: choiceArray[index])
-                            generateAnswers()
-                          opacity = 0.0
-                          degress = 0
-                        
-                        } label: {
-                            AnswerButton(number: choiceArray[index])
-                        }
-                    }
-                }
-                
-                HStack {
-                    ForEach(2..<4) {index in
-                        Button {
-                            answerIsCorrect(answer: choiceArray[index])
-                            generateAnswers()
-                          opacity = 0.0
-                        } label: {
-                            AnswerButton(number: choiceArray[index])
-                        }
-                    }
-                }
-                
-                
-                Text("Счет: \(score)")
-                    .font(.system(size: 30, weight: .bold))
-                    .bold()
-                
-                
-              Button(action: {
-                withAnimation(.easeOut(duration: 2.0)) {
-                  score = 0
-                  isAnimating = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                  isAnimating = false
-                  score = 0
-                }
-              }) {
-                Text("Сбросить счет")
-                  .font(.headline)
-                  .foregroundColor(.white)
-                  .padding()
-                  .background(isAnimating ? Color.green : Color.blue)
-                  .cornerRadius(15)
-                  .scaleEffect(isAnimating ? 1.2 : 1.0)
-                  .animation(.easeInOut(duration: 0.5))
-
+        HStack {
+          ForEach(2..<4) {index in
+            Button {
+              answerIsCorrect(answer: choiceArray[index])
+              generateAnswers()
+              opacity = 0.0
+            } label: {
+              AnswerButton(number: choiceArray[index])
             }
-                
-                Text("Уровень сложности")
-              withAnimation(.easeInOut(duration: 0.5)) {
-                  Picker(selection: $difficulty, label:
-                          Text("Level")) {
-                      ForEach(0..<difficultyArray.count) {
-                          Text("\(difficultyArray[$0])")
-                      }
-                  }
+          }
+        }
+       Spacer()
+        VStack {
+        Text("Счет: \(score)")
+          .font(.system(size: 30, weight: .bold))
+          .bold()
+
+
+        Button(action: {
+          withAnimation(.easeOut(duration: 2.0)) {
+            score = 0
+            isAnimating = true
+          }
+          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            isAnimating = false
+            score = 0
+          }
+        }) {
+          Text("Сбросить счет")
+            .font(.headline)
+            .foregroundColor(.white)
+            .padding()
+            .background(isAnimating ? Color.green : Color.blue)
+            .cornerRadius(15)
+            .scaleEffect(isAnimating ? 1.2 : 1.0)
+            .animation(.easeInOut(duration: 0.5))
+        }
+        Spacer()
+
+        Text("Уровень сложности")
+        withAnimation(.easeInOut(duration: 0.5)) {
+          Picker(selection: $difficulty, label:
+                  Text("Level")) {
+            ForEach(0..<difficultyArray.count) {
+              Text("\(difficultyArray[$0])")
+            }
+          }
                   .pickerStyle(SegmentedPickerStyle())
-              }
+        }
+      }
+        Spacer()
             }
+
         }
     }
 

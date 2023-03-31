@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1DB81C29D6C53200A77B77 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */; };
 		CE2D092F29D4673100D0FEE4 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D092E29D4673100D0FEE4 /* SoundView.swift */; };
-		CE2D093229D4722100D0FEE4 /* drop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093129D4722100D0FEE4 /* drop.mp3 */; };
-		CE2D093429D4722B00D0FEE4 /* drop1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093329D4722B00D0FEE4 /* drop1.mp3 */; };
+		CE2D093229D4722100D0FEE4 /* Щулчок1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093129D4722100D0FEE4 /* Щулчок1.mp3 */; };
+		CE2D093429D4722B00D0FEE4 /* Щелчок2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093329D4722B00D0FEE4 /* Щелчок2.mp3 */; };
 		CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDB29D32502004D6222 /* AlphabetRus.swift */; };
 		CE554BDF29D32539004D6222 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDE29D32539004D6222 /* Model.swift */; };
 		CE554BE329D32563004D6222 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE229D32563004D6222 /* Alphabet.swift */; };
@@ -21,17 +22,18 @@
 		CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38729D3213D00DEB45F /* SimpleGame.xcdatamodeld */; };
 		CE70A38D29D3213E00DEB45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70A38C29D3213E00DEB45F /* Assets.xcassets */; };
 		CE70A39129D3213E00DEB45F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */; };
-		CE9DA65E29D59E54005A1E51 /* капля1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA65D29D59E54005A1E51 /* капля1.mp3 */; };
-		CE9DA66229D59E69005A1E51 /* Пузырь2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA66129D59E69005A1E51 /* Пузырь2.mp3 */; };
-		CE9DA66429D59E73005A1E51 /* Пузырь1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA66329D59E73005A1E51 /* Пузырь1.mp3 */; };
+		CE9DA65E29D59E54005A1E51 /* Капля1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA65D29D59E54005A1E51 /* Капля1.mp3 */; };
+		CE9DA66229D59E69005A1E51 /* Пузырь1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA66129D59E69005A1E51 /* Пузырь1.mp3 */; };
+		CE9DA66429D59E73005A1E51 /* Капля2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA66329D59E73005A1E51 /* Капля2.mp3 */; };
 		CEF3E4B329D3316200976396 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554C2629D3305E004D6222 /* SettingsView.swift */; };
 		CEFA61A629D6BB8000135E78 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA61A529D6BB8000135E78 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		CE2D092E29D4673100D0FEE4 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
-		CE2D093129D4722100D0FEE4 /* drop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drop.mp3; sourceTree = "<group>"; };
-		CE2D093329D4722B00D0FEE4 /* drop1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drop1.mp3; sourceTree = "<group>"; };
+		CE2D093129D4722100D0FEE4 /* Щулчок1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Щулчок1.mp3"; sourceTree = "<group>"; };
+		CE2D093329D4722B00D0FEE4 /* Щелчок2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Щелчок2.mp3"; sourceTree = "<group>"; };
 		CE554BDB29D32502004D6222 /* AlphabetRus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetRus.swift; sourceTree = "<group>"; };
 		CE554BDE29D32539004D6222 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CE554BE229D32563004D6222 /* Alphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
@@ -46,9 +48,9 @@
 		CE70A38C29D3213E00DEB45F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleGame.entitlements; sourceTree = "<group>"; };
 		CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CE9DA65D29D59E54005A1E51 /* капля1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "капля1.mp3"; sourceTree = "<group>"; };
-		CE9DA66129D59E69005A1E51 /* Пузырь2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Пузырь2.mp3"; sourceTree = "<group>"; };
-		CE9DA66329D59E73005A1E51 /* Пузырь1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Пузырь1.mp3"; sourceTree = "<group>"; };
+		CE9DA65D29D59E54005A1E51 /* Капля1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Капля1.mp3"; sourceTree = "<group>"; };
+		CE9DA66129D59E69005A1E51 /* Пузырь1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Пузырь1.mp3"; sourceTree = "<group>"; };
+		CE9DA66329D59E73005A1E51 /* Капля2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Капля2.mp3"; sourceTree = "<group>"; };
 		CEFA61A529D6BB8000135E78 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,11 +68,11 @@
 		CE2D093029D471EB00D0FEE4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				CE2D093329D4722B00D0FEE4 /* drop1.mp3 */,
-				CE9DA66329D59E73005A1E51 /* Пузырь1.mp3 */,
-				CE9DA66129D59E69005A1E51 /* Пузырь2.mp3 */,
-				CE9DA65D29D59E54005A1E51 /* капля1.mp3 */,
-				CE2D093129D4722100D0FEE4 /* drop.mp3 */,
+				CE2D093329D4722B00D0FEE4 /* Щелчок2.mp3 */,
+				CE9DA66329D59E73005A1E51 /* Капля2.mp3 */,
+				CE9DA66129D59E69005A1E51 /* Пузырь1.mp3 */,
+				CE9DA65D29D59E54005A1E51 /* Капля1.mp3 */,
+				CE2D093129D4722100D0FEE4 /* Щулчок1.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -87,10 +89,10 @@
 		CE554C1B29D3287F004D6222 /* Alphabet */ = {
 			isa = PBXGroup;
 			children = (
-				CE554BE229D32563004D6222 /* Alphabet.swift */,
 				CE554BDB29D32502004D6222 /* AlphabetRus.swift */,
-				CE2D092E29D4673100D0FEE4 /* SoundView.swift */,
+				CE554BE229D32563004D6222 /* Alphabet.swift */,
 				CE554BDE29D32539004D6222 /* Model.swift */,
+				CE2D092E29D4673100D0FEE4 /* SoundView.swift */,
 			);
 			path = Alphabet;
 			sourceTree = "<group>";
@@ -129,6 +131,7 @@
 				CE554C1A29D3286E004D6222 /* Math */,
 				CE554C1D29D32949004D6222 /* Flag */,
 				CE70A38529D3213D00DEB45F /* Persistence.swift */,
+				CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */,
 				CE2D093029D471EB00D0FEE4 /* Sounds */,
 				CE70A38C29D3213E00DEB45F /* Assets.xcassets */,
 				CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */,
@@ -212,13 +215,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE9DA66229D59E69005A1E51 /* Пузырь2.mp3 in Resources */,
+				CE9DA66229D59E69005A1E51 /* Пузырь1.mp3 in Resources */,
 				CE70A39129D3213E00DEB45F /* Preview Assets.xcassets in Resources */,
-				CE2D093429D4722B00D0FEE4 /* drop1.mp3 in Resources */,
-				CE9DA65E29D59E54005A1E51 /* капля1.mp3 in Resources */,
-				CE2D093229D4722100D0FEE4 /* drop.mp3 in Resources */,
+				CE2D093429D4722B00D0FEE4 /* Щелчок2.mp3 in Resources */,
+				CE9DA65E29D59E54005A1E51 /* Капля1.mp3 in Resources */,
+				CE2D093229D4722100D0FEE4 /* Щулчок1.mp3 in Resources */,
 				CE70A38D29D3213E00DEB45F /* Assets.xcassets in Resources */,
-				CE9DA66429D59E73005A1E51 /* Пузырь1.mp3 in Resources */,
+				CE9DA66429D59E73005A1E51 /* Капля2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1DB81C29D6C53200A77B77 /* SwiftUIView.swift in Sources */,
 				CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */,
 				CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */,
 				CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */,

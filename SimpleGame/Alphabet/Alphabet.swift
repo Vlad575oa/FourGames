@@ -17,6 +17,9 @@ struct Shake: GeometryEffect {
     }
 }
 
+
+
+
 struct AlphabetEn: View {
     
     @State var showLetters = true
@@ -92,16 +95,16 @@ struct AlphabetEn: View {
                 .scaleEffect(scaleAmount)
 
                 Button("Show letters") {
-                                    letterVisibility = Array(repeating: true, count: 26)
-                                    withAnimation(.easeInOut(duration: 0.2)) {
-                                        scaleAmount1 = 0.9
-                                    }
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                        withAnimation(.easeInOut(duration: 0.2)) {
-                                            scaleAmount1 = 1.0
-                                        }
-                                    }
-                                }
+                  letterVisibility = Array(repeating: true, count: 26)
+                  withAnimation(.easeInOut(duration: 0.2)) {
+                    scaleAmount1 = 0.9
+                  }
+                  DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                      scaleAmount1 = 1.0
+                    }
+                  }
+                }
                 .font(.system(size: 20))
                 .padding(.horizontal, 50)
                 .padding(.vertical, 20)
@@ -109,7 +112,25 @@ struct AlphabetEn: View {
                 .foregroundColor(.white)
                 .cornerRadius(30)
                 .padding()
-                .scaleEffect(scaleAmount1)
+              .scaleEffect(scaleAmount1)
+
+              HStack {
+                Button(action: {
+                      print("Button tapped!")
+                  }) {
+                }
+                Spacer()
+                Button(action: {
+                      print("Button tapped!")
+                  }) {
+                      Image(systemName: "speaker.fill")
+                }
+                  .font(.system(size: 20))
+                  .padding(.trailing, 20)
+              }
+
+
+              Spacer()
             }
         }
     }

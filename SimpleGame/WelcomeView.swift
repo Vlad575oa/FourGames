@@ -9,83 +9,76 @@ import SwiftUI
 
 struct WelcomeView: View {
   var body: some View {
-    TabView {
-      NavigationView {
-        ZStack {
-          LinearGradient(gradient: Gradient(colors: [Color.green, Color.indigo, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing)
-            .edgesIgnoringSafeArea(.all)
-          VStack(spacing: 20){
-            Text("Добро пожаловать в мое приложение")
-              .font(.largeTitle)
-              .fontWeight(.medium)
-              .padding(.top, 50)
-              .multilineTextAlignment(.center)
-
-            Spacer()
-
-            VStack(spacing: 35) {
-              NavigationLink(destination: AlphabetRu()) {
-                Text("Алфавит")
-                  .font(.system(size: 30))
-                  .padding(.horizontal, 20)
-                  .padding(.vertical, 20)
-                  .background(Color.green)
-                  .foregroundColor(.white)
-                  .cornerRadius(30)
-              }
-              NavigationLink(destination: AlphabetEn()) {
-                Text("Alphabet")
-                  .font(.system(size: 30))
-                  .padding(.horizontal, 20)
-                  .padding(.vertical, 20)
-                  .background(Color.orange)
-                  .foregroundColor(.white)
-                  .cornerRadius(30)
-              }
-
-              NavigationLink(destination: MathView()) {
-                Text("Математика")
-                  .font(.system(size: 30))
-                  .padding(.horizontal, 20)
-                  .padding(.vertical, 20)
-                  .background(Color.purple)
-                  .foregroundColor(.white)
-                  .cornerRadius(30)
-              }
-
-              NavigationLink(destination: FlagView()) {
-                Text("Угадай флаг")
-                  .font(.system(size: 30))
-                  .padding(.horizontal, 20)
-                  .padding(.vertical, 20)
-                  .background(Color.blue)
-                  .foregroundColor(.white)
-                  .cornerRadius(30)
-              }
-
+    NavigationView {
+      ZStack {
+        LinearGradient(gradient: Gradient(colors: [Color.green, Color.indigo, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing)
+          .edgesIgnoringSafeArea(.all)
+        VStack(spacing: 20){
+          Text("Добро пожаловать в мое приложение")
+            .font(.largeTitle)
+            .fontWeight(.medium)
+            .padding(.top, 50)
+            .multilineTextAlignment(.center)
+          
+          Spacer()
+          
+          VStack(spacing: 35) {
+            NavigationLink(destination: AlphabetRu()) {
+              Text("Алфавит")
+                .modifier(TextModifier(color: .green))
             }
-            Spacer()
+            NavigationLink(destination: AlphabetEn()) {
+              Text("Alphabet")
+                .modifier(TextModifier(color: .orange))
+            }
+            
+            NavigationLink(destination: MathView()) {
+              Text("Математика")
+                .modifier(TextModifier(color: .purple))
+            }
+            
+            NavigationLink(destination: FlagView()) {
+              Text("Угадай флаг")
+                .modifier(TextModifier(color: .blue))
+            }
+            
           }
-          .navigationBarTitle("Меню", displayMode: .inline)
-          .foregroundColor(.white)
-          .navigationBarItems(leading:
-                                Button(action: {
-          }) {
-          },trailing:
-                                NavigationLink(destination: SettingsView()) {
-            // Image(systemName: "gear")
-            // .foregroundColor(.white)
-          }
-          )
+          Spacer()
         }
+        .navigationBarTitle("Меню", displayMode: .inline)
+        .foregroundColor(.white)
+        .navigationBarItems(leading:
+                              Button(action: {
+        }) {
+        },trailing:
+                              NavigationLink(destination: SettingsView()) {
+          Image(systemName: "gear")
+            .foregroundColor(.white)
+        }
+        )
       }
-      
     }
+    
   }
+  
 }
 
 struct WelcomeView_Previews: PreviewProvider {
   static var previews: some View {
     WelcomeView()
   }
+}
+
+
+struct TextModifier: ViewModifier {
+let color: Color
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 30))
+            .padding(.horizontal, 20)
+            .padding(.vertical, 20)
+            .background(color)
+            .foregroundColor(.white)
+            .cornerRadius(30)
+    }
 }

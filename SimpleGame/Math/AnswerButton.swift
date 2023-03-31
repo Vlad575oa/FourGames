@@ -13,7 +13,7 @@ struct AnswerButton: View {
     var body: some View {
         
             Text("\(number)")
-            .frame(width: 100, height: 100)
+            .frame(width: 80, height: 70)
                 .font(.system(size: 40, weight: .bold))
                 .padding(20)
                 .background(LinearGradient(colors: [.blue, .green], startPoint: .top, endPoint: .bottom)).cornerRadius(50)

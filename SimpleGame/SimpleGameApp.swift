@@ -18,8 +18,8 @@ struct SimpleGameApp: App {
     let appearance = UIBarButtonItem.appearance()
 //  appearance.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .normal)
     let font = UIFont.systemFont(ofSize: 21.0)
-           let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.white]
-           appearance.setTitleTextAttributes(attributes, for: .normal)
+    let attributes: [NSAttributedString.Key: Any] = [.font: font, .foregroundColor: UIColor.white]
+    appearance.setTitleTextAttributes(attributes, for: .normal)
     }
 
     var body: some Scene {

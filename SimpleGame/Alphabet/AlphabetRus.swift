@@ -109,6 +109,7 @@ struct AlphabetRu: View {
                 .cornerRadius(30)
                 .padding(.bottom,10)
                 .scaleEffect(scaleAmount1)
+              Spacer()
             }
         }
     }

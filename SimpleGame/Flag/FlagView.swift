@@ -33,7 +33,7 @@ struct FlagView: View {
                 .font(.title)
                 .fontWeight(.regular)
                 .multilineTextAlignment(.center)
-                .padding()
+               
               ForEach(0..<3) { number in
                 Button {
                   withAnimation(Animation.easeInOut(duration: 0.5)) { // Use a custom animation with a longer duration
@@ -52,20 +52,17 @@ struct FlagView: View {
                     .clipped()
                     .rotation3DEffect(.degrees(number == correctAnswer ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                 }
-                .padding(.vertical,10)
+                .padding(.vertical,8)
               }
               Spacer()
                 .frame(height: 30)
               Text("Cчет \(score)")
                 .foregroundColor(.white)
                 .font(.largeTitle)
-                .padding()
-                .padding(.horizontal, 10)
                 .cornerRadius(30)
 
             }
             .padding(.bottom, showingScore ? 100 : 0)
-            Spacer()
             Button(action: {
               withAnimation(.easeOut(duration: 1)) { // Use withAnimation instead
                 score = 0
@@ -85,8 +82,8 @@ struct FlagView: View {
                 .scaleEffect(isAnimating ? 1.2 : 1.0)
                 .animation(.easeInOut(duration: 0.5))
             }
+            Spacer()
           }
-
             .actionSheet(isPresented: $showingScore) {
                             ActionSheet(
                                 title: Text(scoreTitle)
@@ -101,7 +98,6 @@ struct FlagView: View {
                                 ]
                             )
                         }
-
 
         }
     }

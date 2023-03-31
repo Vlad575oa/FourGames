@@ -87,11 +87,12 @@ struct AlphabetEn: View {
                                 }
                 .font(.system(size: 20))
                 .padding(.horizontal, 50)
-                .padding(.vertical, 20)
+                .padding(.vertical, 17)
                 .background(Color.red.opacity(0.8))
                 .foregroundColor(.white)
-                .cornerRadius(30)
+                .cornerRadius(15)
                 .padding()
+                .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
                 .scaleEffect(scaleAmount)
 
                 Button("Show letters") {
@@ -107,11 +108,12 @@ struct AlphabetEn: View {
                 }
                 .font(.system(size: 20))
                 .padding(.horizontal, 50)
-                .padding(.vertical, 20)
+                .padding(.vertical, 17).shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
                 .background(Color.purple)
                 .foregroundColor(.white)
-                .cornerRadius(30)
+                .cornerRadius(15)
                 .padding()
+                .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 4)
               .scaleEffect(scaleAmount1)
 
               HStack {

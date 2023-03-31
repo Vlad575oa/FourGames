@@ -15,6 +15,7 @@ struct LetterView: View {
                 RoundedRectangle(cornerRadius: 10)
                 .fill(isVisible ? Color.white : Color.blue)
                 .frame(maxWidth: 80, maxHeight: 80)
+                .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
               .padding(.horizontal, 5)
               .onTapGesture {
                 soundManager.playSound()

@@ -88,6 +88,7 @@ struct AlphabetRu: View {
                 .background(Color.pink.opacity(0.8))
                 .foregroundColor(.white)
                 .cornerRadius(30)
+                .shadow(color: Color.gray, radius: 4, x: 5, y: 5)
                 .scaleEffect(scaleAmount)
                 
                 Button("Показать буквы") {
@@ -107,7 +108,7 @@ struct AlphabetRu: View {
                 .background(Color.blue.opacity(0.8))
                 .foregroundColor(.white)
                 .cornerRadius(30)
-                .padding(.bottom,10)
+                .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 3, y: 5)
                 .scaleEffect(scaleAmount1)
               Spacer()
             }

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "BIG_letters_A_B_C_and_inside_flags_numbers__501698436__3TbSWOLWJCjC__sd_neurogen-1-0__dreamlike-art.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

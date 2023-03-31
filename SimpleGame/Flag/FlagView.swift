@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FlagView: View {
 
-  @State private var countries = ["Флаг Австралии", "Флаг Австрии", "Флаг Азербайджана", "Флаг Албании", "Флаг Алжира", "Флаг Анголы", "Флаг Аргентины", "Флаг Андорры", "Флаг Армении", "Флаг Афганистана", "Флаг Багамских Островов", "Флаг Бангладеш", "Флаг Бахрейна", "Флаг Белиза", "Флаг Руспублики Беларусь", "Флаг Бельгии", "Флаг Бенина", "Флаг Болгарии", "Флаг Боливии", "Флаг Боснии и Герцеговины","Флаг Ботсваны","Флаг Бразилии","Флаг Брунея","Флаг Буркина-Фасо","Флаг Бурунди","Флаг Бутана","Флаг Вануату","Флаг Великобритании","Флаг Венгрии","Флаг Венесуэлы","Флаг Восточного Тимора","Флаг Вьетнама","Флаг Габона","Флаг Гаити","Флаг Гайаны","Флаг Гамбии","Флаг Ганы","Флаг Гватемалы","Флаг Гвинеи","Флаг Гвинеи-Бисау","Флаг Германии","Флаг Гондураса","Палестинский флаг","Флаг Гренады","Флаг Греции","Флаг Грузии","Флаг Дании","Флаг Демократической Республики Конго","Флаг Доминиканской Республики","Флаг Египта","Флаг Замбии","Флаг Зимбабве","Флаг Индии","Флаг Индонезии","Флаг Иордании","Флаг Ирака"].shuffled()
+  @State private var countries = ["Флаг Австралии","Флаг Андорры","Флаг Австрии", "Флаг Азербайджана", "Флаг Албании", "Флаг Алжира", "Флаг Анголы", "Флаг Аргентины", "Флаг Андорры", "Флаг Армении", "Флаг Афганистана", "Флаг Багамских Островов", "Флаг Бангладеш", "Флаг Бахрейна", "Флаг Белиза", "Флаг Руспублики Беларусь", "Флаг Бельгии", "Флаг Бенина", "Флаг Болгарии", "Флаг Боливии", "Флаг Боснии и Герцеговины","Флаг Ботсваны","Флаг Бразилии","Флаг Брунея","Флаг Буркина-Фасо","Флаг Бурунди","Флаг Бутана","Флаг Вануату","Флаг Великобритании","Флаг Венгрии","Флаг Венесуэлы","Флаг Восточного Тимора","Флаг Вьетнама","Флаг Габона","Флаг Гаити","Флаг Гайаны","Флаг Гамбии","Флаг Ганы","Флаг Гватемалы","Флаг Гвинеи","Флаг Гвинеи-Бисау","Флаг Германии","Флаг Гондураса","Палестинский флаг","Флаг Гренады","Флаг Греции","Флаг Грузии","Флаг Дании","Флаг Демократической Республики Конго","Флаг Доминиканской Республики","Флаг Египта","Флаг Замбии","Флаг Зимбабве","Флаг Индии","Флаг Индонезии","Флаг Иордании","Флаг Ирака"].shuffled()
 
   @AppStorage("score") private var score = 0
   @State private var isAnimating = false
@@ -34,25 +34,29 @@ struct FlagView: View {
                 .fontWeight(.regular)
                 .multilineTextAlignment(.center)
                
-              ForEach(0..<3) { number in
-                Button {
-                  withAnimation(Animation.easeInOut(duration: 0.5)) { // Use a custom animation with a longer duration
-                    self.animationAmount += 360
-                  }
-                  self.flagTapped(number)
-                } label: {
-                  Image(self.countries[number])
-                    .resizable()
-                    .renderingMode(.original) // Set the rendering mode to original for better quality
-                    .interpolation(.high)
-                    .frame(width: 150, height: 100)
-                    .cornerRadius(20)
-                    .overlay(RoundedRectangle(cornerRadius: 20)
+              VStack {
+                ForEach(0..<3) { number in
+                  Button {
+                    withAnimation(Animation.easeInOut(duration: 0.5)) { // Use a custom animation with a longer duration
+                      self.animationAmount += 360
+                    }
+                    self.flagTapped(number)
+                  } label: {
+                    Image(self.countries[number])
+                      .resizable()
+                      .renderingMode(.original)
+                      .interpolation(.high)
+                      .frame(width: 150, height: 100)
+                      .cornerRadius(20)
+                      .overlay(RoundedRectangle(cornerRadius: 15)
                       .strokeBorder(Color.white, lineWidth: 3)) // Use strokeBorder for better quality
-                    .clipped()
-                    .rotation3DEffect(.degrees(number == correctAnswer ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
+                      .clipped()
+                      .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
+                      .rotation3DEffect(.degrees(number == correctAnswer ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
+                  }
+                  .padding(.vertical,8)
                 }
-                .padding(.vertical,8)
+
               }
               Spacer()
                 .frame(height: 30)
@@ -62,9 +66,9 @@ struct FlagView: View {
                 .cornerRadius(30)
 
             }
-            .padding(.bottom, showingScore ? 100 : 0)
+
             Button(action: {
-              withAnimation(.easeOut(duration: 1)) { // Use withAnimation instead
+              withAnimation(.easeOut(duration: 0.5)) { // Use withAnimation instead
                 score = 0
                 isAnimating = true
               }
@@ -79,8 +83,8 @@ struct FlagView: View {
                 .padding()
                 .background(isAnimating ? Color.green : Color.blue)
                 .cornerRadius(15)
-                .scaleEffect(isAnimating ? 1.2 : 1.0)
-                .animation(.easeInOut(duration: 0.5))
+                .scaleEffect(isAnimating ? 1.1 : 1.0)
+
             }
             Spacer()
           }
@@ -93,8 +97,9 @@ struct FlagView: View {
                                 buttons: [
                                     .default(Text("Продолжить")) {
                                         self.askQuestion()
-                                    },
-
+                                    },  .default(Text("")) {
+                                      //
+                                    }
                                 ]
                             )
                         }

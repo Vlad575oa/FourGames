@@ -15,7 +15,7 @@ class SoundManager: ObservableObject {
     var audioPlayer: AVAudioPlayer?
 
     init() {
-        loadAudioPlayer(for: "Капля1")
+        loadAudioPlayer(for: "Капля 1")
     }
 
   func loadAudioPlayer(for audio: String) {
@@ -36,30 +36,31 @@ class SoundManager: ObservableObject {
 
 
 
-struct NewView: View {
-    @StateObject var soundManager = SoundManager.instance
-    @State var selectedAudio = "капля"
+struct SelectAudio: View {
+  @StateObject var soundManager = SoundManager.instance
+  @State var selectedAudio = "Капля 1"
+     let audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
 
     var body: some View {
         VStack {
-            Picker("Select Audio", selection: $selectedAudio) {
-              Text("Капля1").tag("Капля1")
-              Text("Капля2").tag("Капля2")
-              Text("Пузырь1").tag("Пузырь1")
-            }
-            .pickerStyle(.wheel)
-            .padding()
+          Picker(selection: $selectedAudio, label: Image(systemName: "gear"), content: {
+              ForEach(audioOptions, id: \.self) { option in
+                  Text(option).tag(option)
+              }
+          })
 
-            Button("Play Audio") {
-                soundManager.loadAudioPlayer(for: selectedAudio)
-                soundManager.playSound()
-            }
+                      .padding()
+
+                      Button("Play Audio") {
+                          soundManager.loadAudioPlayer(for: selectedAudio)
+                          soundManager.playSound()
+                      }
         }
     }
 }
 
-struct NewView_Previews: PreviewProvider {
+struct SelectAudio_Previews: PreviewProvider {
     static var previews: some View {
-        NewView()
+        SelectAudio()
     }
 }

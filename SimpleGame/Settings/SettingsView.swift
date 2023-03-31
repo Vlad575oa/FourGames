@@ -13,7 +13,8 @@ struct SettingsView: View {
     @AppStorage("mobile") private var mobile = ""
 
   @StateObject var soundManager = SoundManager.instance
-  @State var selectedAudio = "капля"
+  @State var selectedAudio = "Капля 1"
+  @State var audioOptions = ["Капля 1", "Капля 2", "Щелчок 1","Щелчок 2","Пузырь 1"]
 
 
     var body: some View {
@@ -36,11 +37,11 @@ struct SettingsView: View {
                   .textFieldStyle(RoundedBorderTextFieldStyle())
                   .padding()
           Picker("Select Audio", selection: $selectedAudio) {
-                          Text("Капля1").tag("Капля1")
-                          Text("Капля2").tag("Капля2")
-                          Text("Пузырь1").tag("Пузырь1")
+                          ForEach(audioOptions, id: \.self) { option in
+                              Text(option)
+                          }
                       }
-          .pickerStyle(.wheel)
+                      .pickerStyle(.segmented)
                       .padding()
 
                       Button("Play Audio") {

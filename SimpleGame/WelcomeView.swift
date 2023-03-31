@@ -19,9 +19,9 @@ struct WelcomeView: View {
             .fontWeight(.medium)
             .padding(.top, 50)
             .multilineTextAlignment(.center)
-          
+
           Spacer()
-          
+
           VStack(spacing: 35) {
             NavigationLink(destination: AlphabetRu()) {
               Text("Алфавит")
@@ -31,17 +31,17 @@ struct WelcomeView: View {
               Text("Alphabet")
                 .modifier(TextModifier(color: .orange))
             }
-            
+
             NavigationLink(destination: MathView()) {
               Text("Математика")
                 .modifier(TextModifier(color: .purple))
             }
-            
+
             NavigationLink(destination: FlagView()) {
               Text("Угадай флаг")
                 .modifier(TextModifier(color: .blue))
             }
-            
+
           }
           Spacer()
         }
@@ -58,9 +58,9 @@ struct WelcomeView: View {
         )
       }
     }
-    
+
   }
-  
+
 }
 
 struct WelcomeView_Previews: PreviewProvider {
@@ -70,15 +70,4 @@ struct WelcomeView_Previews: PreviewProvider {
 }
 
 
-struct TextModifier: ViewModifier {
-let color: Color
-    func body(content: Content) -> some View {
-        content
-            .font(.system(size: 30))
-            .padding(.horizontal, 20)
-            .padding(.vertical, 20)
-            .background(color)
-            .foregroundColor(.white)
-            .cornerRadius(30)
-    }
-}
+

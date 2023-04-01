@@ -13,11 +13,11 @@ struct AnswerButton: View {
     var body: some View {
         
             Text("\(number)")
-            .frame(width: 80, height: 70)
-                .font(.system(size: 40, weight: .bold))
+            .frame(width: 100, height: 70)
+                .font(.system(size: 45, weight: .bold))
                 .padding(20)
                 .background(LinearGradient(colors: [.blue, .green], startPoint: .top, endPoint: .bottom)).cornerRadius(50)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
               
               
         

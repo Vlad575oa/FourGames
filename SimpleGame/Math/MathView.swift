@@ -15,10 +15,9 @@ struct MathView: View {
   @State private var choiceArray = [0, 1, 2, 3]
   @State private var firstNumber = 0
   @State private var secondNumber = 0
-  
-  @AppStorage("score") private var score = 0
   @State private var difficulty = 0
-  
+  @AppStorage("score") private var score = 0
+
   var difficultyArray = [30, 50, 100, 500, 1000]
 
   var body: some View {
@@ -30,15 +29,12 @@ struct MathView: View {
           .multilineTextAlignment(.center)
           .font(.system(size: 35, weight: .semibold))
 
-
-
         Text("\(firstNumber) + \(secondNumber)")
-          .font(.system(size: 50, weight: .bold))
+          .font(.system(size: 45, weight: .bold))
           .bold()
           .padding()
 
           .background(LinearGradient(colors: [.purple, .blue], startPoint:.leading, endPoint: .trailing)).cornerRadius(40)
-
 
         HStack {
 
@@ -66,103 +62,76 @@ struct MathView: View {
             }
           }
         }
-       Spacer()
+        Spacer()
         VStack {
-        Text("Счет: \(score)")
-          .font(.system(size: 30, weight: .bold))
-          .bold()
+          Text("Счет: \(score)")
+            .font(.system(size: 35, weight: .bold))
+            .bold()
 
-
-        Button(action: {
-          withAnimation(.easeOut(duration: 0.5)) {
-            score = 0
-            isAnimating = true
+          Button(action: {
+            withAnimation(.easeOut(duration: 0.5)) {
+              score = 0
+              isAnimating = true
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              isAnimating = false
+              score = 0
+            }
+          }) {
+            Text("Сбросить счет")
+              .font(.system(size: 25, weight: .medium))
+              .font(.headline)
+              .foregroundColor(.black)
+              .padding()
+              .background(isAnimating ? Color.green : Color.blue)
+              .cornerRadius(15)
+              .scaleEffect(isAnimating ? 1.2 : 1.0)
           }
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            isAnimating = false
-            score = 0
-          }
-        }) {
-          Text("Сбросить счет")
-            .font(.headline)
-            .foregroundColor(.white)
-            .padding()
-            .background(isAnimating ? Color.green : Color.blue)
-            .cornerRadius(15)
-            .scaleEffect(isAnimating ? 1.2 : 1.0)
 
+          Spacer()
+
+          Text("Уровень сложности")
+          withAnimation(.easeInOut(duration: 0.5)) {
+            Picker(selection: $difficulty, label:
+                    Text("Level")) {
+              ForEach(0..<difficultyArray.count, id: \.self) {
+                Text("\(difficultyArray[$0])")
+              }
+            }
+              .pickerStyle(SegmentedPickerStyle())
+          }
         }
         Spacer()
-
-        Text("Уровень сложности")
-        withAnimation(.easeInOut(duration: 0.5)) {
-          Picker(selection: $difficulty, label:
-                  Text("Level")) {
-            ForEach(0..<difficultyArray.count) {
-              Text("\(difficultyArray[$0])")
-            }
-          }
-                  .pickerStyle(SegmentedPickerStyle())
-        }
       }
-        Spacer()
-            }
-
-        }
     }
+  }
 
-    
-    func answerIsCorrect(answer: Int){
-        if answer == correctAnswer {
-            self.score += 1
-           
-        } else {
-            self.score -= 1
-        }
+  func answerIsCorrect(answer: Int){
+    if answer == correctAnswer {
+      self.score += 1
+    } else {
+      self.score -= 1
     }
+  }
 
-    func generateAnswers(){
-        firstNumber = Int.random(in: 1...(difficultyArray[difficulty]/2))
-        secondNumber = Int.random(in: 1...(difficultyArray[difficulty]/2))
-        var answerList = [Int]()
-        
-        correctAnswer = firstNumber + secondNumber
-        
-        for _ in 0...2 {
-            answerList.append(Int.random(in: 1...difficultyArray[difficulty]))
-        }
-        
-        answerList.append(correctAnswer)
-        
-        choiceArray = answerList.shuffled()
+  func generateAnswers(){
+    firstNumber = Int.random(in: 1...(difficultyArray[difficulty]/2))
+    secondNumber = Int.random(in: 1...(difficultyArray[difficulty]/2))
+    var answerList = [Int]()
+    correctAnswer = firstNumber + secondNumber
+
+    for _ in 0...2 {
+      answerList.append(Int.random(in: 1...difficultyArray[difficulty]))
     }
-    
+    answerList.append(correctAnswer)
+    choiceArray = answerList.shuffled()
+  }
 }
 
 struct MathView_Previews: PreviewProvider {
-    static var previews: some View {
-        MathView()
-    }
+  static var previews: some View {
+    MathView()
+  }
 }
 
-//struct TextModifier: ViewModifier {
-//
-//
-//  var opacity: Double
-//  var degrees: Double
-//  mutating func body(content: Content) -> some View {
-//    content
-//      .font(.largeTitle)
-//      .foregroundColor(.red)
-//      .rotationEffect(.degrees(self.degrees))
-//      .opacity(self.opacity)
-//      .animation(.easeInOut(duration: 2.0))
-//      .onAppear {
-//        withAnimation {
-//          self.opacity = 1.0
-//          self.degrees = 360
-//        }
-//      }
-//  }
-//}
 

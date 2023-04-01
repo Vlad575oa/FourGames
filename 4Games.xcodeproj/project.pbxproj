@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0FBC7D29D7FA0A00E9678A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0FBC7C29D7FA0A00E9678A /* DataManager.swift */; };
 		CE1DB81C29D6C53200A77B77 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */; };
 		CE1DB81E29D70A0800A77B77 /* TextModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1DB81D29D70A0800A77B77 /* TextModifiers.swift */; };
-		CE2D092F29D4673100D0FEE4 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D092E29D4673100D0FEE4 /* SoundView.swift */; };
+		CE2D092F29D4673100D0FEE4 /* SelectAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2D092E29D4673100D0FEE4 /* SelectAudio.swift */; };
 		CE2D093229D4722100D0FEE4 /* Щелчок 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093129D4722100D0FEE4 /* Щелчок 1.mp3 */; };
 		CE2D093429D4722B00D0FEE4 /* Щелчок 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE2D093329D4722B00D0FEE4 /* Щелчок 2.mp3 */; };
 		CE554BDC29D32502004D6222 /* AlphabetRus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDB29D32502004D6222 /* AlphabetRus.swift */; };
 		CE554BDF29D32539004D6222 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BDE29D32539004D6222 /* Model.swift */; };
-		CE554BE329D32563004D6222 /* Alphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE229D32563004D6222 /* Alphabet.swift */; };
+		CE554BE329D32563004D6222 /* AlphabetEn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE229D32563004D6222 /* AlphabetEn.swift */; };
 		CE554BE529D32573004D6222 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE429D32573004D6222 /* FlagView.swift */; };
 		CE554BE729D32583004D6222 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE629D32583004D6222 /* MathView.swift */; };
 		CE554BE929D32588004D6222 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE829D32588004D6222 /* AnswerButton.swift */; };
@@ -31,14 +32,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE0FBC7C29D7FA0A00E9678A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		CE1DB81D29D70A0800A77B77 /* TextModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModifiers.swift; sourceTree = "<group>"; };
-		CE2D092E29D4673100D0FEE4 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
+		CE2D092E29D4673100D0FEE4 /* SelectAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAudio.swift; sourceTree = "<group>"; };
 		CE2D093129D4722100D0FEE4 /* Щелчок 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Щелчок 1.mp3"; sourceTree = "<group>"; };
 		CE2D093329D4722B00D0FEE4 /* Щелчок 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Щелчок 2.mp3"; sourceTree = "<group>"; };
 		CE554BDB29D32502004D6222 /* AlphabetRus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetRus.swift; sourceTree = "<group>"; };
 		CE554BDE29D32539004D6222 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		CE554BE229D32563004D6222 /* Alphabet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alphabet.swift; sourceTree = "<group>"; };
+		CE554BE229D32563004D6222 /* AlphabetEn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetEn.swift; sourceTree = "<group>"; };
 		CE554BE429D32573004D6222 /* FlagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		CE554BE629D32583004D6222 /* MathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		CE554BE829D32588004D6222 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
@@ -92,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				CE554BDB29D32502004D6222 /* AlphabetRus.swift */,
-				CE554BE229D32563004D6222 /* Alphabet.swift */,
+				CE554BE229D32563004D6222 /* AlphabetEn.swift */,
 				CE554BDE29D32539004D6222 /* Model.swift */,
 			);
 			path = Alphabet;
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				CE554BE429D32573004D6222 /* FlagView.swift */,
+				CE0FBC7C29D7FA0A00E9678A /* DataManager.swift */,
 			);
 			path = Flag;
 			sourceTree = "<group>";
@@ -154,7 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				CE554C2629D3305E004D6222 /* SettingsView.swift */,
-				CE2D092E29D4673100D0FEE4 /* SoundView.swift */,
+				CE2D092E29D4673100D0FEE4 /* SelectAudio.swift */,
 				CE1DB81D29D70A0800A77B77 /* TextModifiers.swift */,
 			);
 			path = Settings;
@@ -236,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1DB81C29D6C53200A77B77 /* SwiftUIView.swift in Sources */,
+				CE0FBC7D29D7FA0A00E9678A /* DataManager.swift in Sources */,
 				CE1DB81E29D70A0800A77B77 /* TextModifiers.swift in Sources */,
 				CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */,
 				CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */,
@@ -244,8 +248,8 @@
 				CE554BDF29D32539004D6222 /* Model.swift in Sources */,
 				CE554BE729D32583004D6222 /* MathView.swift in Sources */,
 				CE554BE529D32573004D6222 /* FlagView.swift in Sources */,
-				CE554BE329D32563004D6222 /* Alphabet.swift in Sources */,
-				CE2D092F29D4673100D0FEE4 /* SoundView.swift in Sources */,
+				CE554BE329D32563004D6222 /* AlphabetEn.swift in Sources */,
+				CE2D092F29D4673100D0FEE4 /* SelectAudio.swift in Sources */,
 				CE70A38629D3213D00DEB45F /* Persistence.swift in Sources */,
 				CEF3E4B329D3316200976396 /* SettingsView.swift in Sources */,
 				CEFA61A629D6BB8000135E78 /* WelcomeView.swift in Sources */,

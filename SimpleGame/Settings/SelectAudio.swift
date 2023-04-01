@@ -37,8 +37,9 @@ class SoundManager: ObservableObject {
 
 
 struct SelectAudio: View {
+  
   @StateObject var soundManager = SoundManager.instance
-  @State var selectedAudio = "Капля 1"
+  @AppStorage("Audio") private var selectedAudio = "Капля 1"
      let audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
 
     var body: some View {
@@ -48,13 +49,19 @@ struct SelectAudio: View {
                   Text(option).tag(option)
               }
           })
+          .pickerStyle(.wheel)
 
                       .padding()
 
-                      Button("Play Audio") {
+                      Button("Play") {
                           soundManager.loadAudioPlayer(for: selectedAudio)
                           soundManager.playSound()
                       }
+                      .font(.system(size: 25))
+                      .foregroundColor(.white)
+                      .padding(.horizontal, 40)
+                      .background(Color.black)
+                      .cornerRadius(25)
         }
     }
 }

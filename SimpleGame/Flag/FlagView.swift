@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FlagView: View {
 
-  @State private var countries = ["Флаг Австралии","Флаг Андорры","Флаг Австрии", "Флаг Азербайджана", "Флаг Албании", "Флаг Алжира", "Флаг Анголы", "Флаг Аргентины", "Флаг Андорры", "Флаг Армении", "Флаг Афганистана", "Флаг Багамских Островов", "Флаг Бангладеш", "Флаг Барбадоса","Флаг Бахрейна", "Флаг Белиза", "Флаг Белоруссии", "Флаг Бельгии", "Флаг Бенина", "Флаг Болгарии", "Флаг Боливии", "Флаг Боснии и Герцеговины","Флаг Ботсваны","Флаг Бразилии","Флаг Брунея","Флаг Буркина-Фасо","Флаг Бурунди","Флаг Бутана","Флаг Вануату","Флаг Великобритании","Флаг Венгрии","Флаг Венесуэлы","Флаг Восточного Тимора","Флаг Вьетнама","Флаг Габона","Флаг Гаити","Флаг Гайаны","Флаг Гамбии","Флаг Ганы","Флаг Гватемалы","Флаг Гвинеи","Флаг Гвинеи-Бисау","Флаг Германии","Флаг Гондураса","Флаг Гренады","Флаг Греции","Флаг Грузии","Флаг Дании","Флаг Демократической Республики Конго","Флаг Доминиканской Республики","Флаг Египта","Флаг Замбии","Флаг Зимбабве","Флаг Израиля","Флаг Индии","Флаг Индонезии","Флаг Иордании","Флаг Ирака","Флаг Иралндии","Флаг Исландии","Флаг Испании","Флаг Италии","Флаг Йемена","Флаг Кабо-Верде","Флаг Казахстана","Флаг Камбоджи","Флаг Камеруна","Флаг Канады","Флаг Катара","Флаг Кении","Флаг Киргизии","Флаг Китая","Флаг Коломбии","Флаг Комор","Флаг Коста-Рики","Флаг  Кот-д’Ивуара","Флаг Кубы","Флаг Кувейта","Флаг Лаоса","Флаг Латвии","Флаг Ливии","Флаг Литвы","Флаг Люксембурга","Флаг Маврикия","Флаг Мавритании","Флаг Мадагаскара","Флаг Македонии","Флаг Малайзии","Флаг Мали","Флаг Мальдив","Флаг Мальты","Флаг Марокко","Флаг Мексики","Флаг Мозамбика","Флаг Молдавии","Флаг Монако","Флаг Монголии","Флаг Мьянмы","Флаг Намибии","Флаг Нигерии","Флаг Нидерландов","Флаг Никарагуа", "Палестинский флаг"].shuffled()
+  private var countries = Flags()
 
   @AppStorage("score") private var score = 0
   @State private var isAnimating = false
@@ -21,14 +21,14 @@ struct FlagView: View {
     var body: some View {
         ZStack {
           LinearGradient(gradient: Gradient(stops: [
-              .init(color: Color(#colorLiteral(red: 0.4607751966, green: 0.4590293765, blue: 1, alpha: 1)), location: 0),
-              .init(color: Color(#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)), location: 1)
+              .init(color: Color(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)), location: 0),
+              .init(color: Color(#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)), location: 2)
           ]), startPoint: UnitPoint(x: 0.5, y: 0), endPoint: UnitPoint(x: 0, y: 1))
           .ignoresSafeArea()
           VStack {
 
             VStack(spacing: 10) {
-              Text(countries[correctAnswer])
+              Text(countries.array[correctAnswer])
                 .foregroundColor(.white)
                 .font(.title)
                 .fontWeight(.regular)
@@ -42,7 +42,7 @@ struct FlagView: View {
                     }
                     self.flagTapped(number)
                   } label: {
-                    Image(self.countries[number])
+                    Image(self.countries.array[number])
                       .resizable()
                       .renderingMode(.original)
                       .interpolation(.high)
@@ -108,7 +108,7 @@ struct FlagView: View {
     }
 
     func askQuestion() {
-        countries.shuffle()
+      countries.array.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
 
@@ -117,7 +117,7 @@ struct FlagView: View {
             scoreTitle = "Правильный ответ!"
             score += 1
         } else {
-            scoreTitle = "Неправильно! Это \(countries[number])"
+          scoreTitle = "Неправильно! Это \(countries.array[number])"
             score -= 1
         }
         showingScore = true

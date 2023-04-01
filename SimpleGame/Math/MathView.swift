@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MathView: View {
-  @State private var isAnimating = true
+  @State private var isAnimating = false
   @State private var correctAnswer = 0
   @State private var opacity = 0.0
   @State private var degress = 0.0

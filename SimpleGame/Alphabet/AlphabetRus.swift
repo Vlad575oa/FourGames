@@ -10,7 +10,8 @@ struct AlphabetRu: View {
     @State var IsShowSelectAudio = false
     @State var showLetters = true
     @State var randomNumber = 0
-    @State private var scaleAmount: CGFloat = 1.0
+    @State private var scaleAmount1: CGFloat = 1.0
+    @State private var scaleAmount2: CGFloat = 1.0
     @State var letterVisibility = Array(repeating: true, count: 33)
     
     var body: some View {
@@ -18,32 +19,33 @@ struct AlphabetRu: View {
             LinearGradient(gradient: Gradient(colors: [Color.yellow, Color.yellow, Color.green]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .edgesIgnoringSafeArea(.all)
           VStack {
-            LettersRu()
+            LettersRu(letterVisibility: $letterVisibility)
 
             Button("Скрыть буквы") {
               letterVisibility = letterVisibility.map { _ in Bool.random() }
-              withAnimation(.easeInOut(duration: 0.2)) {
-                scaleAmount = 0.8
+              withAnimation(.easeInOut(duration: 0.5)) {
+                scaleAmount1 = 0.8
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                  scaleAmount = 1.0
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                  scaleAmount1 = 1.0
                 }
               }
             }
-            .modifier(TextModifier2(color: .pink,scale: scaleAmount))
+            .modifier(TextModifier2(color: .pink,scale: scaleAmount1))
 
             Button("Показать буквы") {
-              withAnimation(.easeInOut(duration: 0.2)) {
-                scaleAmount = 0.8
+              withAnimation(.easeInOut(duration: 0.5)) {
+                scaleAmount2 = 0.8
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                  scaleAmount = 1.0
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                withAnimation(.easeInOut(duration: 0.4)) {
+                  scaleAmount2 = 1.0
+                  letterVisibility = Array(repeating: true, count: 33)
                 }
               }
             }
-            .modifier(TextModifier2(color:.blue, scale: scaleAmount))
+            .modifier(TextModifier2(color:.blue, scale: scaleAmount2))
 
 // MARK: - speaker Button
             HStack {
@@ -78,7 +80,7 @@ struct AlphabetRu_Previews: PreviewProvider {
 
 
 struct LettersRu: View {
-  @State var letterVisibility = Array(repeating: true, count: 33)
+  @Binding var letterVisibility: [Bool]
 
   var body: some View {
     HStack() {
@@ -135,3 +137,5 @@ struct LettersRu: View {
     }
   }
 }
+
+

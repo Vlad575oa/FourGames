@@ -22,7 +22,8 @@ struct AlphabetEn: View {
   @State var showLetters = true
   @State var letterVisibility = Array(repeating: true, count: 26)
   @State var randomNumber = 0
-  @State private var scaleAmount: CGFloat = 1.0
+  @State private var scaleAmount1: CGFloat = 1.0
+  @State private var scaleAmount2: CGFloat = 1.0
 
     var body: some View {
         ZStack {
@@ -33,29 +34,29 @@ struct AlphabetEn: View {
 
             Button("Hide letters") {
               letterVisibility = letterVisibility.map { _ in Bool.random() }
-              withAnimation(.easeInOut(duration: 0.2)) {
-                scaleAmount = 1.0
+              withAnimation(.easeInOut(duration: 0.6)) {
+                scaleAmount1 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                  scaleAmount = 0.8
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.easeInOut(duration: 0.5)) {
+                  scaleAmount1 = 1.0
                 }
               }
             }
-            .modifier(TextModifier3(color: .red, scale: scaleAmount))
+            .modifier(TextModifier3(color: .red, scale: scaleAmount1))
 
             Button("Show letters") {
               letterVisibility = Array(repeating: true, count: 26)
-              withAnimation(.easeInOut(duration: 0.2)) {
-                scaleAmount = 0.9
+              withAnimation(.easeInOut(duration: 0.5)) {
+                scaleAmount2 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                  scaleAmount = 1.0
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                withAnimation(.easeInOut(duration: 0.5)) {
+                  scaleAmount2 = 1.0
                 }
               }
             }
-            .modifier(TextModifier3(color: .purple, scale: scaleAmount))
+            .modifier(TextModifier3(color: .purple, scale: scaleAmount2))
             HStack {
               Button(action: {
                 //

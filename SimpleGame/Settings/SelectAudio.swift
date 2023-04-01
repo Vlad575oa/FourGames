@@ -15,7 +15,7 @@ class SoundManager: ObservableObject {
     var audioPlayer: AVAudioPlayer?
 
     init() {
-        loadAudioPlayer(for: "Капля 1")
+        loadAudioPlayer(for: "")
     }
 
   func loadAudioPlayer(for audio: String) {
@@ -37,9 +37,9 @@ class SoundManager: ObservableObject {
 
 
 struct SelectAudio: View {
-  
+
   @StateObject var soundManager = SoundManager.instance
-  @AppStorage("Audio") private var selectedAudio = "Капля 1"
+  @AppStorage("Audio") private var selectedAudio = ""
      let audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
 
     var body: some View {
@@ -60,7 +60,8 @@ struct SelectAudio: View {
                       .font(.system(size: 25))
                       .foregroundColor(.white)
                       .padding(.horizontal, 40)
-                      .background(Color.black)
+                      .padding(.vertical, 10)
+                      .background(Color.blue)
                       .cornerRadius(25)
         }
     }

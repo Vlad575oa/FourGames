@@ -27,7 +27,7 @@ let scale: CGFloat
     func body(content: Content) -> some View {
         content
         .font(.system(size: 23))
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 35)
         .padding(.vertical, 18)
         .background(color.opacity(0.8))
         .foregroundColor(.white)

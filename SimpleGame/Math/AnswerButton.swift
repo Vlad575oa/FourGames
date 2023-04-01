@@ -18,6 +18,7 @@ struct AnswerButton: View {
                 .padding(20)
                 .background(LinearGradient(colors: [.blue, .green], startPoint: .top, endPoint: .bottom)).cornerRadius(50)
                 .foregroundColor(.black)
+                .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
               
               
         

@@ -28,13 +28,14 @@ struct MathView: View {
         Text("Сколько будет ")
           .multilineTextAlignment(.center)
           .font(.system(size: 35, weight: .semibold))
+    
 
         Text("\(firstNumber) + \(secondNumber)")
           .font(.system(size: 45, weight: .bold))
           .bold()
           .padding()
-
           .background(LinearGradient(colors: [.purple, .blue], startPoint:.leading, endPoint: .trailing)).cornerRadius(40)
+          .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
 
         HStack {
 
@@ -66,7 +67,7 @@ struct MathView: View {
         VStack {
           Text("Счет: \(score)")
             .font(.system(size: 35, weight: .bold))
-            .bold()
+            .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
 
           Button(action: {
             withAnimation(.easeOut(duration: 0.5)) {
@@ -86,6 +87,7 @@ struct MathView: View {
               .background(isAnimating ? Color.green : Color.blue)
               .cornerRadius(15)
               .scaleEffect(isAnimating ? 1.2 : 1.0)
+              .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
           }
 
           Spacer()

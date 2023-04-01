@@ -16,7 +16,7 @@ struct FlagView: View {
   @State private var correctAnswer = Int.random(in: 0...3)
   @State private var showingScore = false
   @State private var scoreTitle = ""
-  @State private var animationAmount: Double = 1
+  @State private var animationAmount: Double = 0
 
     var body: some View {
         ZStack {
@@ -49,7 +49,7 @@ struct FlagView: View {
                       .frame(width: 150, height: 100)
                       .cornerRadius(20)
                       .overlay(RoundedRectangle(cornerRadius: 15)
-                      .strokeBorder(Color.white, lineWidth: 3)) // Use strokeBorder for better quality
+                      .strokeBorder(Color.white, lineWidth: 3))
                       .clipped()
                       .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
                       .rotation3DEffect(.degrees(number == correctAnswer ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
@@ -116,6 +116,7 @@ struct FlagView: View {
         if number == correctAnswer {
             scoreTitle = "Правильный ответ!"
             score += 1
+
         } else {
           scoreTitle = "Неправильно! Это \(countries.array[number])"
             score -= 1

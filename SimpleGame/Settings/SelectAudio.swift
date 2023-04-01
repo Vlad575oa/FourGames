@@ -10,6 +10,7 @@ import AVKit
 
 class SoundManager: ObservableObject {
   static let instance = SoundManager()
+private var quitVoice = false
 
   var audioPlayer: AVAudioPlayer?
 
@@ -23,7 +24,12 @@ class SoundManager: ObservableObject {
          }
      }
 
+
   func loadAudioPlayer(for audio: String) {
+  if audio == "Без звука" {
+                audioPlayer = nil
+                return
+            }
         guard let audioPath = Bundle.main.path(forResource: audio, ofType: "mp3") else { return }
         let audioUrl = URL(fileURLWithPath: audioPath)
         do {
@@ -33,7 +39,7 @@ class SoundManager: ObservableObject {
         }
     }
 
-    func playSound() {
+  func playSound() {
         audioPlayer?.currentTime = 0
         audioPlayer?.play()
     }
@@ -43,7 +49,7 @@ struct SelectAudio: View {
 
   @StateObject var soundManager = SoundManager.instance
 
-  var audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
+  var audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1", "Без звука"]
 
     var body: some View {
         VStack {
@@ -51,21 +57,33 @@ struct SelectAudio: View {
                          ForEach(audioOptions, id: \.self) { option in
                              Text(option)
                          }
-                     }
+          }
           .pickerStyle(.wheel)
-                      .padding()
+          .padding()
 
-                      Button("Play") {
-                          soundManager.playSound()
-                      }
-                      .font(.system(size: 25))
-                      .foregroundColor(.white)
-                      .padding(.horizontal, 40)
-                      .padding(.vertical, 10)
-                      .background(Color.blue)
-                      .cornerRadius(25)
+          Button("Play") {
+            soundManager.playSound()
+          }
+          .font(.system(size: 25))
+          .foregroundColor(.white)
+          .padding(.horizontal, 45)
+          .padding(.vertical, 10)
+          .background(Color.blue)
+          .cornerRadius(25)
+          .padding()
+
+
+
+          //          Button("Stop Audio") {
+          //            soundManager.audioPlayer?.stop()
+          //          }
+          //          .font(.system(size: 25))
+          //          .foregroundColor(.white)
+          //          .padding(.horizontal, 10)
+          //          .padding(.vertical, 10)
+          //          .background(Color.red)
+          //          .cornerRadius(25)
         }
-
 
     }
 }

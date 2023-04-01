@@ -7,6 +7,7 @@
 import SwiftUI
 struct LetterView: View {
   let letter: String
+  
   @StateObject var soundManager = SoundManager.instance
   @Binding var isVisible: Bool
   

@@ -9,14 +9,19 @@ import SwiftUI
 import AVKit
 
 class SoundManager: ObservableObject {
-    static let instance = SoundManager()
+  static let instance = SoundManager()
 
+  var audioPlayer: AVAudioPlayer?
 
-    var audioPlayer: AVAudioPlayer?
+     init() {
+         loadAudioPlayer(for: selectedAudioOption)
+     }
 
-    init() {
-        loadAudioPlayer(for: "")
-    }
+     @AppStorage("SelectedAudioOption") var selectedAudioOption: String = "Капля 1" {
+         didSet {
+             loadAudioPlayer(for: selectedAudioOption)
+         }
+     }
 
   func loadAudioPlayer(for audio: String) {
         guard let audioPath = Bundle.main.path(forResource: audio, ofType: "mp3") else { return }
@@ -34,27 +39,23 @@ class SoundManager: ObservableObject {
     }
 }
 
-
-
 struct SelectAudio: View {
 
   @StateObject var soundManager = SoundManager.instance
-  @AppStorage("Audio") private var selectedAudio = ""
-     let audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
+
+  var audioOptions = ["Капля 1", "Капля 2", "Щелчок 1", "Щелчок 2", "Пузырь 1"]
 
     var body: some View {
         VStack {
-          Picker(selection: $selectedAudio, label: Image(systemName: "gear"), content: {
-              ForEach(audioOptions, id: \.self) { option in
-                  Text(option).tag(option)
-              }
-          })
+          Picker("Select Audio", selection: $soundManager.selectedAudioOption) {
+                         ForEach(audioOptions, id: \.self) { option in
+                             Text(option)
+                         }
+                     }
           .pickerStyle(.wheel)
-
                       .padding()
 
                       Button("Play") {
-                          soundManager.loadAudioPlayer(for: selectedAudio)
                           soundManager.playSound()
                       }
                       .font(.system(size: 25))
@@ -64,6 +65,8 @@ struct SelectAudio: View {
                       .background(Color.blue)
                       .cornerRadius(25)
         }
+
+
     }
 }
 

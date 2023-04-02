@@ -68,11 +68,11 @@ struct FlagView: View {
             }
 
             Button(action: {
-              withAnimation(.easeOut(duration: 0.5)) { // Use withAnimation instead
+              withAnimation(.easeOut(duration: 0.7)) { // Use withAnimation instead
                 score = 0
                 isAnimating = true
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+              DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
                 isAnimating = false
                 score = 0
               }
@@ -83,7 +83,7 @@ struct FlagView: View {
                 .padding()
                 .background(isAnimating ? Color.green : Color.blue)
                 .cornerRadius(15)
-                .scaleEffect(isAnimating ? 1.1 : 1.0)
+                .scaleEffect(isAnimating ? 1.2 : 1.0)
 
             }
             Spacer()

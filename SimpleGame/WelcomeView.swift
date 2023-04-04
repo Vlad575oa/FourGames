@@ -47,15 +47,15 @@ struct WelcomeView: View {
         }
         .navigationBarTitle("Меню", displayMode: .inline)
         .foregroundColor(.white)
-//        .navigationBarItems(leading:
-//                              Button(action: {
-//        }) {
-//        },trailing:
-//                              NavigationLink(destination: SettingsView()) {
-//          Image(systemName: "gear")
-//            .foregroundColor(.white)
-//        }
-//        )
+        //        .navigationBarItems(leading:
+        //        Button(action: {
+        //        }) {
+        //        },trailing:
+        //                              NavigationLink(destination: SettingsView()) {
+        //          Image(systemName: "gear")
+        //          .foregroundColor(.white)
+        //        }
+        //        )
       }
     }
 

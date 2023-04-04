@@ -16,7 +16,7 @@ struct MathView: View {
   @State private var firstNumber = 0
   @State private var secondNumber = 0
   @State private var difficulty = 0
-  @AppStorage("score") private var score = 0
+  @AppStorage("scoreMath") private var score = 0
 
   var difficultyArray = [30, 50, 100, 500, 1000]
 

@@ -11,7 +11,7 @@ struct FlagView: View {
 
   private var countries = Flags()
 
-  @AppStorage("score") private var score = 0
+  @AppStorage("scoreFlag") private var score = 0
   @State private var isAnimating = false
   @State private var correctAnswer = Int.random(in: 0...3)
   @State private var showingScore = false

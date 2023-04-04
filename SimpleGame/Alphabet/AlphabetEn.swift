@@ -37,11 +37,9 @@ struct AlphabetEn: View {
               withAnimation(.easeInOut(duration: 0.6)) {
                 scaleAmount1 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 withAnimation(.easeInOut(duration: 0.5)) {
                   scaleAmount1 = 1.0
                 }
-              }
             }
             .modifier(TextModifier3(color: .red, scale: scaleAmount1))
 

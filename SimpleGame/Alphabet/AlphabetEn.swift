@@ -34,24 +34,22 @@ struct AlphabetEn: View {
 
             Button("Hide letters") {
               letterVisibility = letterVisibility.map { _ in Bool.random() }
-              withAnimation(.easeInOut(duration: 0.6)) {
+              withAnimation(.easeInOut(duration: 0.5)) {
                 scaleAmount1 = 0.7
               }
-                withAnimation(.easeInOut(duration: 0.5)) {
+                withAnimation(.easeInOut(duration: 1.2)) {
                   scaleAmount1 = 1.0
                 }
             }
             .modifier(TextModifier3(color: .red, scale: scaleAmount1))
 
             Button("Show letters") {
-              letterVisibility = Array(repeating: true, count: 26)
               withAnimation(.easeInOut(duration: 0.5)) {
                 scaleAmount2 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.easeInOut(duration: 0.5)) {
+                withAnimation(.easeInOut(duration: 1.2)) {
                   scaleAmount2 = 1.0
-                }
+                  letterVisibility = Array(repeating: true, count: 26)
               }
             }
             .modifier(TextModifier3(color: .purple, scale: scaleAmount2))

@@ -23,26 +23,23 @@ struct AlphabetRu: View {
 
             Button("Скрыть буквы") {
               letterVisibility = letterVisibility.map { _ in Bool.random() }
-              withAnimation(.easeInOut(duration: 0.5)) {
-                scaleAmount1 = 0.8
+              withAnimation(.easeInOut(duration: 0.6)) {
+                scaleAmount1 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                withAnimation(.easeInOut(duration: 0.4)) {
+
+                withAnimation(.easeInOut(duration: 1.2)) {
                   scaleAmount1 = 1.0
-                }
               }
             }
             .modifier(TextModifier2(color: .pink,scale: scaleAmount1))
 
             Button("Показать буквы") {
-              withAnimation(.easeInOut(duration: 0.5)) {
-                scaleAmount2 = 0.8
+              withAnimation(.easeInOut(duration: 0.6)) {
+                scaleAmount2 = 0.7
               }
-              DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                withAnimation(.easeInOut(duration: 0.4)) {
+              withAnimation(.easeInOut(duration: 1.2)) {
                   scaleAmount2 = 1.0
                   letterVisibility = Array(repeating: true, count: 33)
-                }
               }
             }
             .modifier(TextModifier2(color:.blue, scale: scaleAmount2))

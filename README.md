@@ -1,6 +1,8 @@
-#### *Приложение состоит из четырех игр: изучение русского алфавита, английского алфавита, сложение цифр, выбор флага страны.
+#### *Приложение состоит из четырех игр: изучение русского алфавита, английского алфавита, сложение цифр, выбор флага страны.*
 
-![screenshot_1](https://user-images.githubusercontent.com/79313522/230337889-24877dcc-ef66-45d7-a127-4ff9bdbbf0d2.png), ![screenshot_2](https://user-images.githubusercontent.com/79313522/230337913-c69218ce-5c45-441b-9117-ddab6c6e2fa4.png),![screenshot_3](https://user-images.githubusercontent.com/79313522/230338944-71384999-b580-477d-a182-fc52bd125677.png)
+![1Logo](https://user-images.githubusercontent.com/79313522/230345159-9cee4033-c94c-4724-b3a6-7912d1d68428.jpg)
+![2Logo](https://user-images.githubusercontent.com/79313522/230345175-2a44183e-9339-4e6f-83a2-e3b12d0295db.jpg)
+
 
 
 

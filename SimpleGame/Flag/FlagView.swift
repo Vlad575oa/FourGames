@@ -128,9 +128,7 @@ struct FlagView: View {
         } else {
           scoreTitle = """
 Вы выбрали \(countries.array[number])
-
 Правильый ответ \(correctAnswer + 1)
-
 """
 
 

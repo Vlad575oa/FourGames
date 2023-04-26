@@ -17,6 +17,9 @@ struct FlagView: View {
   @State private var showingScore = false
   @State private var scoreTitle = ""
   @State private var animationAmount: Double = 0
+  @State private var colorCorrectAnswer: Color = .white
+
+
 
     var body: some View {
         ZStack {
@@ -29,16 +32,17 @@ struct FlagView: View {
 
             VStack(spacing: 10) {
               Text(countries.array[correctAnswer])
+                .multilineTextAlignment(.center)
                 .foregroundColor(.white)
                 .font(.title)
-                .fontWeight(.regular)
-                .multilineTextAlignment(.center)
+                .padding(.horizontal, 5)
                
               VStack {
                 ForEach(0..<3) { number in
                   Button {
-                    withAnimation(Animation.easeInOut(duration: 0.5)) {
+                    withAnimation(Animation.easeInOut(duration: 0.9)) {
                       self.animationAmount += 360
+                      self.colorCorrectAnswer = .green
                     }
                     self.flagTapped(number)
                   } label: {
@@ -49,14 +53,13 @@ struct FlagView: View {
                       .frame(width: 150, height: 100)
                       .cornerRadius(20)
                       .overlay(RoundedRectangle(cornerRadius: 15)
-                      .strokeBorder(Color.white, lineWidth: 3))
+                        .strokeBorder(number == correctAnswer ? colorCorrectAnswer : .white, lineWidth: 5))
                       .clipped()
                       .shadow(color: Color.gray.opacity(0.9), radius: 4, x: 5, y: 5)
                       .rotation3DEffect(.degrees(number == correctAnswer ? animationAmount : 0), axis: (x: 0, y: 1, z: 0))
                   }
                   .padding(.vertical,8)
                 }
-
               }
               Spacer()
                 .frame(height: 30)
@@ -91,14 +94,17 @@ struct FlagView: View {
             .actionSheet(isPresented: $showingScore) {
                             ActionSheet(
                                 title: Text(scoreTitle)
+                                  .foregroundColor(.red)
                                   .font(.headline),
                                 message: Text("Общий счет \(score)")
-                                  .font(.headline),
+                                  .font(.headline)
+                                ,
                                 buttons: [
                                     .default(Text("Продолжить")) {
+                                      self.colorCorrectAnswer = .white
                                         self.askQuestion()
                                     },  .default(Text("")) {
-                                      //
+
                                     }
                                 ]
                             )
@@ -117,8 +123,17 @@ struct FlagView: View {
             scoreTitle = "Правильный ответ!"
             score += 1
 
+
+
         } else {
-          scoreTitle = "Неправильно! Это \(countries.array[number])"
+          scoreTitle = """
+Вы выбрали \(countries.array[number])
+
+Правильый ответ \(correctAnswer + 1)
+
+"""
+
+
             score -= 1
         }
         showingScore = true

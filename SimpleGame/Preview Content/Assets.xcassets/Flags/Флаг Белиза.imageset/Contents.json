@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Флаг Белиза.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

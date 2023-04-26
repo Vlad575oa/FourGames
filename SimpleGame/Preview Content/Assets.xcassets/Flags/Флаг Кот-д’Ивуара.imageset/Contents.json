@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Флаг Кот-д’Ивуара.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

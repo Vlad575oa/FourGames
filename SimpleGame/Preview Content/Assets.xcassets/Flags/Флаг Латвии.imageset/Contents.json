@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Флаг Латвии.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

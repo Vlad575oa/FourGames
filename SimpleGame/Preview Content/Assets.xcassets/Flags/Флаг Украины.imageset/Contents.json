@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Флаг Украины.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

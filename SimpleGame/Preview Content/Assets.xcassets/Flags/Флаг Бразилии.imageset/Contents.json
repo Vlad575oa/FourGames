@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Флаг Бразилии.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

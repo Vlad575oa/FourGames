@@ -19,10 +19,10 @@
 		CE554BE529D32573004D6222 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE429D32573004D6222 /* FlagView.swift */; };
 		CE554BE729D32583004D6222 /* MathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE629D32583004D6222 /* MathView.swift */; };
 		CE554BE929D32588004D6222 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE554BE829D32588004D6222 /* AnswerButton.swift */; };
+		CE68392329F9005F0031A6B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE68392229F9005F0031A6B0 /* Assets.xcassets */; };
 		CE70A38429D3213D00DEB45F /* SimpleGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */; };
 		CE70A38629D3213D00DEB45F /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38529D3213D00DEB45F /* Persistence.swift */; };
 		CE70A38929D3213D00DEB45F /* SimpleGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE70A38729D3213D00DEB45F /* SimpleGame.xcdatamodeld */; };
-		CE70A38D29D3213E00DEB45F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70A38C29D3213E00DEB45F /* Assets.xcassets */; };
 		CE70A39129D3213E00DEB45F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */; };
 		CE9DA65E29D59E54005A1E51 /* Капля 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA65D29D59E54005A1E51 /* Капля 1.mp3 */; };
 		CE9DA66229D59E69005A1E51 /* Пузырь 1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE9DA66129D59E69005A1E51 /* Пузырь 1.mp3 */; };
@@ -45,11 +45,11 @@
 		CE554BE629D32583004D6222 /* MathView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MathView.swift; sourceTree = "<group>"; };
 		CE554BE829D32588004D6222 /* AnswerButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
 		CE554C2629D3305E004D6222 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE68392229F9005F0031A6B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE70A38029D3213D00DEB45F /* FourGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FourGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE70A38329D3213D00DEB45F /* SimpleGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleGameApp.swift; sourceTree = "<group>"; };
 		CE70A38529D3213D00DEB45F /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		CE70A38829D3213D00DEB45F /* SimpleGame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleGame.xcdatamodel; sourceTree = "<group>"; };
-		CE70A38C29D3213E00DEB45F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleGame.entitlements; sourceTree = "<group>"; };
 		CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CE9DA65D29D59E54005A1E51 /* Капля 1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Капля 1.mp3"; sourceTree = "<group>"; };
@@ -137,7 +137,6 @@
 				CE70A38529D3213D00DEB45F /* Persistence.swift */,
 				CE1DB81B29D6C53200A77B77 /* SwiftUIView.swift */,
 				CE2D093029D471EB00D0FEE4 /* Sounds */,
-				CE70A38C29D3213E00DEB45F /* Assets.xcassets */,
 				CE70A38E29D3213E00DEB45F /* SimpleGame.entitlements */,
 				CE70A38729D3213D00DEB45F /* SimpleGame.xcdatamodeld */,
 				CE70A38F29D3213E00DEB45F /* Preview Content */,
@@ -148,6 +147,7 @@
 		CE70A38F29D3213E00DEB45F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				CE68392229F9005F0031A6B0 /* Assets.xcassets */,
 				CE70A39029D3213E00DEB45F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -225,8 +225,8 @@
 				CE70A39129D3213E00DEB45F /* Preview Assets.xcassets in Resources */,
 				CE2D093429D4722B00D0FEE4 /* Щелчок 2.mp3 in Resources */,
 				CE9DA65E29D59E54005A1E51 /* Капля 1.mp3 in Resources */,
+				CE68392329F9005F0031A6B0 /* Assets.xcassets in Resources */,
 				CE2D093229D4722100D0FEE4 /* Щелчок 1.mp3 in Resources */,
-				CE70A38D29D3213E00DEB45F /* Assets.xcassets in Resources */,
 				CE9DA66429D59E73005A1E51 /* Капля 2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
